@@ -22,6 +22,10 @@ node_modules/
 README-*.md
 *-draft.md
 
-# Original security files (keep enhanced versions only)
-scripts/security.js
-scripts/test-security.js
+# Test and unnecessary files
+test-*.js
+test.html
+*-enhanced.js
+*-backup.js
+*-loader.js
+*-new.js

@@ -28,7 +28,9 @@
 }
 
 .cert-card {
-    background-color: #171717;
+    background-color: rgba(23, 23, 23, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     overflow: hidden;
     padding: 20px;
@@ -37,7 +39,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid #333333;
+    border: 1px solid rgba(51, 51, 51, 0.5);
     height: 350px; /* Fixed height untuk semua card */
     width: 100%;
     justify-content: flex-start;
@@ -220,7 +222,9 @@
 }
 
 .cert-card {
-    background-color: #171717;
+    background-color: rgba(23, 23, 23, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
     overflow: hidden;
     padding: 20px;
@@ -229,7 +233,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border: 1px solid #333333;
+    border: 1px solid rgba(51, 51, 51, 0.5);
     height: 350px; /* Fixed height untuk semua card */
     width: 100%;
     justify-content: flex-start;
