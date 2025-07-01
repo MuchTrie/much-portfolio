@@ -1,5 +1,4 @@
 # Development files
-scripts/test-security.js
 *.log
 .DS_Store
 Thumbs.db
@@ -14,3 +13,15 @@ Thumbs.db
 
 # Node modules (if any)
 node_modules/
+
+# Backup files
+*.backup
+*.bak
+
+# Documentation drafts
+README-*.md
+*-draft.md
+
+# Original security files (keep enhanced versions only)
+scripts/security.js
+scripts/test-security.js
