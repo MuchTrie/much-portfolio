@@ -934,6 +934,160 @@ body {
     z-index: 2;
 }
 
+/* Projects Wrapper for two-column layout */
+.projects-wrapper {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.project-category {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    box-shadow: var(--shadow-primary);
+    transition: all 0.3s ease;
+}
+
+.project-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.project-category-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.project-category-title i {
+    font-size: 2rem;
+}
+
+.project-content {
+    text-align: center;
+}
+
+/* Defense project category - Blue theme (Left Column) */
+.defense-category {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.defense-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+}
+
+.defense-category .project-category-title i {
+    color: #3b82f6;
+}
+
+.defense-category .maintenance-notice {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+}
+
+.defense-category .maintenance-notice:hover {
+    box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+}
+
+.defense-category .maintenance-icon {
+    color: #3b82f6;
+}
+
+.defense-category .loading-dots span {
+    background: #3b82f6;
+}
+
+/* Attack project category - Red theme (Right Column) */
+.attack-category {
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+.attack-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+}
+
+.attack-category .project-category-title i {
+    color: #dc2626;
+}
+
+.attack-category .maintenance-notice {
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    box-shadow: 0 10px 30px rgba(220, 38, 38, 0.3);
+}
+
+.attack-category .maintenance-notice:hover {
+    box-shadow: 0 15px 40px rgba(220, 38, 38, 0.4);
+}
+
+.attack-category .maintenance-icon {
+    color: #dc2626;
+}
+
+.attack-category .loading-dots span {
+    background: #dc2626;
+}
+
+/* Scrollable project containers */
+.project-list-scroll {
+    max-height: 500px;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(220, 38, 38, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+.project-list-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.project-list-scroll::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.project-list-scroll::-webkit-scrollbar-thumb {
+    background: rgba(220, 38, 38, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.project-list-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 38, 38, 0.7);
+}
+
+/* Different scrollbar colors for defense section */
+.defense-category .project-list-scroll {
+    scrollbar-color: rgba(59, 130, 246, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+.defense-category .project-list-scroll::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+}
+
+.defense-category .project-list-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+}
+
 .maintenance-notice {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -1021,25 +1175,64 @@ body {
         padding: 80px 0;
     }
     
+    .projects-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .project-category {
+        padding: 25px;
+    }
+    
+    .project-category-title {
+        font-size: 1.5rem;
+    }
+    
+    .project-category-title i {
+        font-size: 1.8rem;
+    }
+    
     .maintenance-notice {
         padding: 40px 30px;
-        margin: 0 20px;
+        margin: 0;
     }
     
     .maintenance-icon {
         font-size: 3rem;
     }
     
-    .maintenance-notice h3 {
+    .maintenance-notice h4 {
         font-size: 1.5rem;
     }
     
     .maintenance-notice p {
         font-size: 1rem;
     }
+
+    .project-list-scroll {
+        max-height: 400px;
+    }
 }
 
 @media (max-width: 480px) {
+    .projects-wrapper {
+        gap: 20px;
+    }
+    
+    .project-category {
+        padding: 20px;
+    }
+    
+    .project-category-title {
+        font-size: 1.3rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .project-category-title i {
+        font-size: 1.5rem;
+    }
+    
     .maintenance-notice {
         padding: 30px 20px;
     }
@@ -1048,8 +1241,12 @@ body {
         font-size: 2.5rem;
     }
     
-    .maintenance-notice h3 {
+    .maintenance-notice h4 {
         font-size: 1.3rem;
+    }
+
+    .project-list-scroll {
+        max-height: 300px;
     }
 }
 
