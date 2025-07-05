@@ -1047,6 +1047,76 @@ body {
     background: #dc2626;
 }
 
+/* Compact styling for attack maintenance notice */
+.attack-category .maintenance-notice {
+    padding: 30px 25px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.attack-category .maintenance-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.attack-category .maintenance-notice h4 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.attack-category .maintenance-notice p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.attack-category .maintenance-animation {
+    margin-top: 20px;
+}
+
+.attack-category .loading-dots {
+    gap: 6px;
+}
+
+.attack-category .loading-dots span {
+    width: 8px;
+    height: 8px;
+}
+
+/* Compact styling for defense maintenance notice */
+.defense-category .maintenance-notice {
+    padding: 30px 25px;
+    max-width: 400px;
+    margin: 20px auto 0;
+}
+
+.defense-category .maintenance-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.defense-category .maintenance-notice h4 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.defense-category .maintenance-notice p {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.defense-category .maintenance-animation {
+    margin-top: 20px;
+}
+
+.defense-category .loading-dots {
+    gap: 6px;
+}
+
+.defense-category .loading-dots span {
+    width: 8px;
+    height: 8px;
+}
+
 /* Scrollable project containers */
 .project-list-scroll {
     max-height: 500px;
@@ -1248,6 +1318,30 @@ body {
     .project-list-scroll {
         max-height: 300px;
     }
+}
+
+/* Placeholder card styles */
+.placeholder-card {
+    opacity: 0.7;
+    cursor: default;
+}
+
+.placeholder-card .project-card-header {
+    cursor: default;
+}
+
+.placeholder-card .project-card-header:hover {
+    background: rgba(220, 38, 38, 0.02);
+}
+
+.placeholder-card .project-icon {
+    background: linear-gradient(135deg, #6b7280, #4b5563);
+}
+
+.project-status.upcoming {
+    background: rgba(251, 191, 36, 0.2);
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.3);
 }
 
 /* Enhanced Blur Effects */
@@ -1626,65 +1720,485 @@ body {
     }
 }
 
-/* Scroll animations */
-@keyframes fadeInUp {
+/* Project Card Styles */
+.project-card {
+    background: var(--bg-tertiary);
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+}
+
+.project-card-header {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.project-card-header:hover {
+    background: rgba(220, 38, 38, 0.05);
+}
+
+.project-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gradient-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.project-icon i {
+    color: white;
+    font-size: 1.2rem;
+}
+
+.project-info {
+    flex-grow: 1;
+}
+
+.project-info h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.project-subtitle {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.project-status {
+    display: inline-block;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.project-status.completed {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.dropdown-arrow {
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown-arrow i {
+    color: var(--text-secondary);
+    font-size: 1rem;
+}
+
+.project-card.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.project-dropdown-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                padding 0.3s ease,
+                opacity 0.3s ease;
+    opacity: 0;
+}
+
+.project-dropdown-content.active {
+    max-height: 1000px;
+    padding: 0 1.5rem 1.5rem;
+    opacity: 1;
+}
+
+.project-details {
+    padding-top: 1.5rem;
+}
+
+.project-description p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-meta {
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.meta-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.meta-value {
+    color: var(--text-primary);
+    font-weight: 600;
+    text-align: right;
+}
+
+.meta-value.critical {
+    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
+.project-achievements h5 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.achievement-list {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.achievement-list li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.achievement-list i {
+    color: #22c55e;
+    font-size: 0.9rem;
+}
+
+.project-actions {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.project-btn.primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+}
+
+.project-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.4);
+}
+
+.project-footer {
+    border-top: 1px solid rgba(220, 38, 38, 0.1);
+    padding-top: 1rem;
+}
+
+.project-notice h6 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.project-notice p {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* Attack project specific styling */
+.attack-project .project-icon {
+    background: var(--gradient-primary);
+}
+
+.attack-project .project-card-header:hover {
+    background: rgba(220, 38, 38, 0.05);
+}
+
+/* Responsive adjustments for project cards */
+@media (max-width: 768px) {
+    .project-card-header {
+        padding: 1rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .project-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .dropdown-arrow {
+        margin-left: 0;
+        margin-top: 0.5rem;
+    }
+
+    .project-dropdown-content.active {
+        padding: 0 1rem 1rem;
+    }
+
+    .meta-item {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+
+    .meta-value {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-card-header {
+        padding: 0.8rem;
+    }
+
+    .project-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Project Modal Styles */
+.project-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    overflow-y: auto;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--bg-secondary);
+    margin: 20px auto;
+    padding: 0;
+    border-radius: 20px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: hidden;
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    box-shadow: 0 20px 60px rgba(220, 38, 38, 0.4);
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+    background: rgba(220, 38, 38, 0.05);
+}
+
+.modal-header h3 {
+    color: var(--primary-color);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+.modal-body {
+    padding: 25px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+@keyframes modalSlideIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: scale(0.8) translateY(-50px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: scale(1) translateY(0);
     }
 }
 
-.fade-in-up {
-    animation: fadeInUp 0.6s ease-out;
-}
-
-/* Custom scrollbar */
-::-webkit-scrollbar {
-    width: 8px;
-}
-
-::-webkit-scrollbar-track {
-    background: var(--bg-primary);
-}
-
-::-webkit-scrollbar-thumb {
-    background: var(--primary-color);
-    border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: var(--secondary-color);
-}
-
-/* Fix Android-specific issues */
-@supports (-webkit-touch-callout: none) {
-    .contact-info {
-        display: flex;
-        flex-direction: column;
+/* Mobile-specific modal styles */
+@media (max-width: 768px) {
+    .modal-content {
+        margin: 10px;
+        max-width: calc(100% - 20px);
+        max-height: calc(100% - 20px);
+        border-radius: 15px;
     }
     
-    .contact-item {
-        width: 100%;
+    .modal-header {
+        padding: 15px 20px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.3rem;
+    }
+    
+    .modal-body {
+        padding: 20px;
+        max-height: calc(90vh - 100px);
+        font-size: 0.9rem;
+    }
+    
+    .modal-body h5 {
+        font-size: 1rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .modal-body p {
+        font-size: 0.85rem;
+        line-height: 1.5;
         margin-bottom: 1rem;
     }
     
-    .cert-grid, 
-    .skills-grid, 
-    .contact-info-grid {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .modal-body .meta-label {
+        font-size: 0.8rem;
     }
     
-    .cert-card, 
-    .skill-category, 
-    .contact-card {
-        width: 100%;
-        max-width: 350px;
-        margin-bottom: 1rem;
+    .modal-body .meta-value {
+        font-size: 0.85rem;
+    }
+    
+    .modal-body .achievement-list li {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .modal-body .project-btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .modal-close {
+        width: 35px;
+        height: 35px;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 5px;
+        max-width: calc(100% - 10px);
+        max-height: calc(100% - 10px);
+        border-radius: 10px;
+    }
+    
+    .modal-header {
+        padding: 12px 15px;
+    }
+    
+    .modal-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        max-height: calc(95vh - 80px);
+        font-size: 0.85rem;
+    }
+    
+    .modal-body h5 {
+        font-size: 0.95rem;
+        margin-bottom: 0.7rem;
+    }
+    
+    .modal-body p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+    
+    .modal-body .meta-label {
+        font-size: 0.75rem;
+    }
+    
+    .modal-body .meta-value {
+        font-size: 0.8rem;
+    }
+    
+    .modal-body .achievement-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .modal-body .project-btn {
+        padding: 0.5rem 1.2rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* Hide dropdown content on mobile when using modal */
+@media (max-width: 768px) {
+    .project-dropdown-content {
+        display: none !important;
     }
 }

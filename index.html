@@ -332,11 +332,10 @@
                         <div class="project-list-scroll">
                             <div class="maintenance-notice">
                                 <div class="maintenance-icon">
-                                    <i class="fas fa-tools"></i>
+                                    <i class="fas fa-code"></i>
                                 </div>
                                 <h4>Under Development</h4>
-                                <p>This section is currently being updated with my latest defense projects and developments.</p>
-                                <p>Please check back soon to see my portfolio of work!</p>
+                                <p>More defense projects coming soon!</p>
                                 <div class="maintenance-animation">
                                     <div class="loading-dots">
                                         <span></span>
@@ -344,27 +343,6 @@
                                         <span></span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Demo Content to Show Scrollbar -->
-                            <div style="margin-top: 20px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                                <h5 style="color: #3b82f6; margin-bottom: 10px;">🛡️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Defense projects are currently being developed and will be available soon.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                                <h5 style="color: #3b82f6; margin-bottom: 10px;">🛡️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">More defense projects coming soon to showcase security implementations.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                                <h5 style="color: #3b82f6; margin-bottom: 10px;">🛡️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Stay tuned for comprehensive cybersecurity defense solutions.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(59, 130, 246, 0.1); border-radius: 10px; border: 1px solid rgba(59, 130, 246, 0.3);">
-                                <h5 style="color: #3b82f6; margin-bottom: 10px;">🛡️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Advanced security projects in development phase.</p>
                             </div>
                             
                             <!-- Future defense projects will be added here in this scrollable container -->
@@ -381,41 +359,144 @@
                     </div>
                     <div class="project-content">
                         <div class="project-list-scroll">
-                            <div class="maintenance-notice">
-                                <div class="maintenance-icon">
-                                    <i class="fas fa-tools"></i>
+                            <!-- SQL Injection Penetration Testing Project -->
+                            <div class="project-card attack-project">
+                                <div class="project-card-header" onclick="toggleProjectDropdown('sql-injection-project')">
+                                    <div class="project-icon">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>SQL Injection Penetration Testing</h4>
+                                        <p class="project-subtitle">Web Application Security</p>
+                                        <span class="project-status completed">Completed</span>
+                                    </div>
+                                    <div class="dropdown-arrow">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
                                 </div>
-                                <h4>Under Maintenance</h4>
-                                <p>This section is currently being updated with my latest attack projects and developments.</p>
-                                <p>Please check back soon to see my portfolio of work!</p>
-                                <div class="maintenance-animation">
-                                    <div class="loading-dots">
+                                
+                                <div class="project-dropdown-content" id="sql-injection-project">
+                                    <div class="project-details">
+                                        <div class="project-description">
+                                            <p>Comprehensive penetration testing documenting critical Time-Based Blind SQL Injection vulnerability on government domain endpoint.</p>
+                                        </div>
+                                        
+                                        <div class="project-meta">
+                                            <div class="meta-item">
+                                                <span class="meta-label">Vulnerability Type:</span>
+                                                <span class="meta-value">Time-Based Blind SQL Injection</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Related CVE:</span>
+                                                <span class="meta-value">CVE-2023-32315, CVE-2022-1388</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">CVSS Score:</span>
+                                                <span class="meta-value critical">9.8 (Critical)</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Target Domain:</span>
+                                                <span class="meta-value">Government (.mil.id)</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Primary Tools:</span>
+                                                <span class="meta-value">X-Ray, SQLMap</span>
+                                            </div>
+                                
+                                        </div>
+                                        
+                                        <div class="project-achievements">
+                                            <h5>Key Achievements:</h5>
+                                            <ul class="achievement-list">
+                                                <li><i class="fas fa-check"></i> Database structure extraction</li>
+                                                <li><i class="fas fa-check"></i> Sensitive data enumeration</li>
+                                                <li><i class="fas fa-check"></i> Complete vulnerability documentation</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="project-actions">
+                                            <a href="https://drive.google.com/file/d/18XChfVXgTIwA2qjPDsIMkeKO3Nb4fB_N/view?usp=sharing" target="_blank" class="project-btn primary">
+                                                <i class="fas fa-eye"></i> View Full Report
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Red Team Security Assessment Project -->
+                            <div class="project-card attack-project">
+                                <div class="project-card-header" onclick="toggleProjectDropdown('red-team-project')">
+                                    <div class="project-icon">
+                                        <i class="fas fa-user-ninja"></i>
+                                    </div>
+                                    <div class="project-info">
+                                        <h4>Red Team Security Assessment</h4>
+                                        <p class="project-subtitle">Web Application Security</p>
+                                        <span class="project-status completed">Completed</span>
+                                    </div>
+                                    <div class="dropdown-arrow">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-dropdown-content" id="red-team-project">
+                                    <div class="project-details">
+                                        <div class="project-description">
+                                            <p>Comprehensive red team assessment conducted during Network Security final exam simulation, involving exploitation of assigned web application to identify real security vulnerabilities.</p>
+                                        </div>
+                                        
+                                        <div class="project-meta">
+                                            <div class="meta-item">
+                                                <span class="meta-label">Assessment Type:</span>
+                                                <span class="meta-value">Red Team Security Assessment</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Context:</span>
+                                                <span class="meta-value">Final Exam Simulation</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Target Application:</span>
+                                                <span class="meta-value">Assigned Web Application</span>
+                                            </div>
+                                            <div class="meta-item">
+                                                <span class="meta-label">Primary Tools:</span>
+                                                <span class="meta-value">Gobuster, Wappalyzer, GitHub, phpMyAdmin</span>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="project-achievements">
+                                            <h5>Key Achievements:</h5>
+                                            <ul class="achievement-list">
+                                                <li><i class="fas fa-check"></i> Gained unauthorized database access</li>
+                                                <li><i class="fas fa-check"></i> Discovered leaked .env file on GitHub</li>
+                                                <li><i class="fas fa-check"></i> Performed database structure exfiltration</li>
+                                                <li><i class="fas fa-check"></i> Documented vulnerabilities & provided mitigation</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="project-actions">
+                                            <a href="https://drive.google.com/file/d/1D4mNGKAlbHJ1fUN4RRNyOKplHV1jqvF4/view?usp=sharing" target="_blank" class="project-btn primary">
+                                                <i class="fas fa-eye"></i> View Assessment Report
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Under Development Notice -->
+                            <div class="maintenance-notice attack-maintenance">
+                                <div class="maintenance-icon attack-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h4>Under Development</h4>
+                                <p>More attack projects coming soon!</p>
+                                <div class="maintenance-animation attack-animation">
+                                    <div class="loading-dots attack-dots">
                                         <span></span>
                                         <span></span>
                                         <span></span>
                                     </div>
                                 </div>
-                            </div>
-                            
-                            <!-- Demo Content to Show Scrollbar -->
-                            <div style="margin-top: 20px; padding: 20px; background: rgba(220, 38, 38, 0.1); border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.3);">
-                                <h5 style="color: #dc2626; margin-bottom: 10px;">⚔️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Attack projects are currently being developed and will be available soon.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(220, 38, 38, 0.1); border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.3);">
-                                <h5 style="color: #dc2626; margin-bottom: 10px;">⚔️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">More attack projects coming soon to demonstrate security testing skills.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(220, 38, 38, 0.1); border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.3);">
-                                <h5 style="color: #dc2626; margin-bottom: 10px;">⚔️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Stay tuned for penetration testing and security assessment projects.</p>
-                            </div>
-                            
-                            <div style="margin-top: 15px; padding: 20px; background: rgba(220, 38, 38, 0.1); border-radius: 10px; border: 1px solid rgba(220, 38, 38, 0.3);">
-                                <h5 style="color: #dc2626; margin-bottom: 10px;">⚔️ Under Development</h5>
-                                <p style="color: var(--text-secondary); font-size: 0.9rem;">Advanced ethical hacking projects in development phase.</p>
                             </div>
                             
                             <!-- Future attack projects will be added here in this scrollable container -->
@@ -543,6 +624,22 @@
             <p>&copy; 2025 Much. Trie Harnanto. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-overlay" onclick="closeProjectModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Project Details</h3>
+                <button class="modal-close" onclick="closeProjectModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
 
     <script src="scripts/security.js"></script>
     <script src="scripts/script.js"></script>

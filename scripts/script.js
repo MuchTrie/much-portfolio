@@ -351,3 +351,89 @@ function createBackgroundPattern() {
 }
 
 createBackgroundPattern();
+
+// Project dropdown toggle functionality with mobile modal support
+function toggleProjectDropdown(projectId) {
+    // Check if we're on mobile
+    if (window.innerWidth <= 768) {
+        openProjectModal(projectId);
+        return;
+    }
+    
+    const dropdownContent = document.getElementById(projectId);
+    const projectCard = dropdownContent.closest('.project-card');
+    const dropdownArrow = projectCard.querySelector('.dropdown-arrow');
+    
+    // Toggle active classes
+    dropdownContent.classList.toggle('active');
+    projectCard.classList.toggle('active');
+    
+    // Close other open dropdowns in the same section
+    const allDropdowns = document.querySelectorAll('.project-dropdown-content');
+    const allCards = document.querySelectorAll('.project-card');
+    
+    allDropdowns.forEach(dropdown => {
+        if (dropdown !== dropdownContent && dropdown.classList.contains('active')) {
+            dropdown.classList.remove('active');
+            dropdown.closest('.project-card').classList.remove('active');
+        }
+    });
+}
+
+// Project modal functionality for mobile
+function openProjectModal(projectId) {
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalBody = document.getElementById('modalBody');
+    
+    // Get project data
+    const projectCard = document.getElementById(projectId).closest('.project-card');
+    const projectTitle = projectCard.querySelector('.project-info h4').textContent;
+    const projectContent = document.getElementById(projectId).innerHTML;
+    
+    // Set modal content
+    modalTitle.textContent = projectTitle;
+    modalBody.innerHTML = projectContent;
+    
+    // Show modal
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    // Animation
+    setTimeout(() => {
+        modal.querySelector('.modal-content').style.animation = 'modalSlideIn 0.3s ease-out';
+    }, 10);
+}
+
+function closeProjectModal() {
+    const modal = document.getElementById('projectModal');
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+// Close modal when clicking outside
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('projectModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal || e.target.classList.contains('modal-overlay')) {
+                closeProjectModal();
+            }
+        });
+    }
+});
+
+// Handle window resize to switch between dropdown and modal
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        // Close modal if open and switch to dropdown
+        closeProjectModal();
+    } else {
+        // Close any open dropdowns
+        const activeDropdowns = document.querySelectorAll('.project-dropdown-content.active');
+        const activeCards = document.querySelectorAll('.project-card.active');
+        
+        activeDropdowns.forEach(dropdown => dropdown.classList.remove('active'));
+        activeCards.forEach(card => card.classList.remove('active'));
+    }
+});
