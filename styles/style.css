@@ -1732,7 +1732,7 @@ body {
 
 .project-card:hover {
     border-color: var(--primary-color);
-    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.2);
+    box-shadow: 0 10px 25px rgba(220, 38, 38, 0.15);
 }
 
 .project-card-header {
@@ -1879,14 +1879,16 @@ body {
 .achievement-list {
     list-style: none;
     margin-bottom: 1.5rem;
+    text-align: left;
 }
 
 .achievement-list li {
     color: var(--text-secondary);
     margin-bottom: 0.5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.8rem;
+    text-align: left;
 }
 
 .achievement-list i {
@@ -2201,4 +2203,72 @@ body {
     .project-dropdown-content {
         display: none !important;
     }
+}
+
+/* Defense Project Card Styling */
+.defense-project {
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.defense-project.project-card:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25) !important;
+}
+
+.defense-project:hover {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25) !important;
+}
+
+.defense-project .project-card-header {
+    background: rgba(59, 130, 246, 0.05);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.defense-project .project-card-header:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.defense-project .project-icon {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+}
+
+.defense-project .project-status.completed {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.defense-project .dropdown-arrow {
+    color: #3b82f6;
+}
+
+.defense-project .project-dropdown-content {
+    background: rgba(59, 130, 246, 0.05);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.defense-project .meta-value.critical {
+    color: #ef4444;
+}
+
+.defense-project .meta-value {
+    color: #93c5fd;
+}
+
+.defense-project .achievement-list i {
+    color: #22c55e;
+}
+
+.defense-project .project-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.defense-project .project-subtitle {
+    color: #3b82f6;
 }
