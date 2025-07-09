@@ -1158,6 +1158,38 @@ body {
     background: rgba(59, 130, 246, 0.7);
 }
 
+/* Mobile scrollbar improvements */
+@media (max-width: 768px) {
+    .project-list-scroll {
+        max-height: 350px;
+        padding-right: 5px;
+    }
+    
+    .project-list-scroll::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    .project-list-scroll::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 5px;
+    }
+    
+    .project-list-scroll::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-list-scroll {
+        max-height: 300px;
+        padding-right: 2px;
+    }
+    
+    .project-list-scroll::-webkit-scrollbar {
+        width: 3px;
+    }
+}
+
 .maintenance-notice {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 20px;
@@ -1242,62 +1274,135 @@ body {
 /* Responsive Projects */
 @media (max-width: 768px) {
     .projects {
-        padding: 80px 0;
+        padding: 60px 0;
     }
     
     .projects-wrapper {
         grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .project-category {
-        padding: 25px;
-    }
-    
-    .project-category-title {
-        font-size: 1.5rem;
-    }
-    
-    .project-category-title i {
-        font-size: 1.8rem;
-    }
-    
-    .maintenance-notice {
-        padding: 40px 30px;
-        margin: 0;
-    }
-    
-    .maintenance-icon {
-        font-size: 3rem;
-    }
-    
-    .maintenance-notice h4 {
-        font-size: 1.5rem;
-    }
-    
-    .maintenance-notice p {
-        font-size: 1rem;
-    }
-
-    .project-list-scroll {
-        max-height: 400px;
-    }
-}
-
-@media (max-width: 480px) {
-    .projects-wrapper {
-        gap: 20px;
+        gap: 25px;
+        margin-top: 30px;
     }
     
     .project-category {
         padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 0;
     }
     
     .project-category-title {
-        font-size: 1.3rem;
-        flex-direction: column;
+        font-size: 1.4rem;
         gap: 10px;
     }
+    
+    .project-category-title i {
+        font-size: 1.6rem;
+    }
+    
+    .project-header {
+        margin-bottom: 20px;
+    }
+    
+    .maintenance-notice {
+        padding: 30px 20px;
+        margin: 15px 0 0 0;
+        border-radius: 15px;
+    }
+    
+    .maintenance-icon {
+        font-size: 2.5rem;
+        margin-bottom: 12px;
+    }
+    
+    .maintenance-notice h4 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+    
+    .maintenance-notice p {
+        font-size: 0.9rem;
+    }
+
+    .project-list-scroll {
+        max-height: 350px;
+        padding-right: 5px;
+    }
+    
+    .project-list-scroll::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects {
+        padding: 40px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .projects-wrapper {
+        gap: 20px;
+        margin-top: 20px;
+    }
+    
+    .project-category {
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .project-category-title {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .project-category-title i {
+        font-size: 1.4rem;
+    }
+    
+    .project-header {
+        margin-bottom: 15px;
+    }
+    
+    .maintenance-notice {
+        padding: 25px 15px;
+        border-radius: 12px;
+    }
+    
+    .maintenance-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+    
+    .maintenance-notice h4 {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .maintenance-notice p {
+        font-size: 0.85rem;
+    }
+
+    .project-list-scroll {
+        max-height: 300px;
+        padding-right: 2px;
+    }
+    
+    .loading-dots {
+        gap: 4px;
+    }
+    
+    .loading-dots span {
+        width: 6px;
+        height: 6px;
+    }
+}
     
     .project-category-title i {
         font-size: 1.5rem;
@@ -1632,91 +1737,63 @@ body {
     }
 }
 
-@media (max-width: 480px) {
-    .hero {
-        padding-top: 70px;
-    }
-
-    .hero-title {
-        font-size: 2rem;
-    }
-
-    .hero-subtitle {
-        font-size: 1.1rem;
+@media (max-width: 768px) {
+    /* Touch-friendly improvements for mobile */
+    .project-card-header {
+        min-height: 60px;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
     }
     
-    .hero-description {
-        font-size: 0.95rem;
-    }
-
-    .profile-card {
-        width: 240px;
-        height: 240px;
-        padding: 12px;
-        border-radius: 50%;
+    .project-card-header:active {
+        transform: scale(0.98);
     }
     
-    .profile-image {
-        border-radius: 50%;
-        background: linear-gradient(135deg, #dc2626, #7f1d1d, #0a0a0a);
+    .project-btn {
+        min-height: 44px;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
     }
     
-    .profile-pic {
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    .hero-social {
-        gap: 0.7rem;
-        justify-content: center;
-    }
-
-    .social-link {
-        width: 40px;
-        height: 40px;
-    }
-
-    /* Further improvements for very small screens */
-    .section-divider {
-        margin: 20px auto;
+    .project-btn:active {
+        transform: scale(0.95);
     }
     
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
+    /* Improve text readability on mobile */
+    .project-description p {
+        text-align: left;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
     
-    .skills-grid {
-        gap: 15px;
+    .achievement-list {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    
+    .achievement-list li {
+        margin-bottom: 0.5rem;
+        padding-left: 0;
     }
 }
 
-@media (max-width: 375px) {
-    .hero-title {
-        font-size: 1.8rem;
+@media (max-width: 480px) {
+    .project-card-header {
+        min-height: 50px;
     }
     
-    .profile-card {
-        width: 200px;
-        height: 200px;
-        padding: 10px;
-        border-radius: 50%;
+    .project-btn {
+        min-height: 40px;
     }
     
-    .profile-image {
-        border-radius: 50%;
-        background: linear-gradient(135deg, #dc2626, #7f1d1d, #0a0a0a);
+    .project-description p {
+        font-size: 0.85rem;
+        line-height: 1.5;
     }
     
-    .profile-pic {
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
+    .achievement-list li {
+        margin-bottom: 0.4rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -1953,46 +2030,213 @@ body {
 
 /* Responsive adjustments for project cards */
 @media (max-width: 768px) {
+    .project-card {
+        margin-bottom: 1rem;
+        border-radius: 12px;
+    }
+    
     .project-card-header {
         padding: 1rem;
-        flex-direction: column;
-        text-align: center;
-        gap: 1rem;
+        flex-wrap: wrap;
+        gap: 0.8rem;
     }
 
     .project-icon {
-        margin-right: 0;
-        margin-bottom: 0.5rem;
+        width: 40px;
+        height: 40px;
+        margin-right: 0.8rem;
+        flex-shrink: 0;
+    }
+    
+    .project-icon i {
+        font-size: 1rem;
+    }
+    
+    .project-info {
+        min-width: 0;
+        flex: 1;
+    }
+    
+    .project-info h4 {
+        font-size: 1rem;
+        line-height: 1.3;
+        margin-bottom: 0.2rem;
+    }
+    
+    .project-subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 0.4rem;
+    }
+    
+    .project-status {
+        font-size: 0.7rem;
+        padding: 0.15rem 0.6rem;
     }
 
     .dropdown-arrow {
-        margin-left: 0;
-        margin-top: 0.5rem;
+        margin-left: 0.5rem;
     }
 
     .project-dropdown-content.active {
         padding: 0 1rem 1rem;
     }
+    
+    .project-details {
+        padding-top: 1rem;
+    }
+    
+    .project-description p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
 
     .meta-item {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.3rem;
         text-align: center;
+        padding: 0.4rem 0;
+        margin-bottom: 0.6rem;
+    }
+    
+    .meta-label {
+        font-size: 0.8rem;
+        font-weight: 600;
     }
 
     .meta-value {
         text-align: center;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+    
+    .project-achievements h5 {
+        font-size: 0.9rem;
+        margin-bottom: 0.8rem;
+    }
+    
+    .achievement-list li {
+        font-size: 0.85rem;
+        margin-bottom: 0.4rem;
+        gap: 0.6rem;
+    }
+    
+    .achievement-list i {
+        font-size: 0.8rem;
+        margin-top: 0.1rem;
+    }
+    
+    .project-actions {
+        margin-bottom: 1rem;
+    }
+    
+    .project-btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+        gap: 0.4rem;
     }
 }
 
 @media (max-width: 480px) {
+    .project-card {
+        margin-bottom: 0.8rem;
+        border-radius: 10px;
+    }
+    
     .project-card-header {
         padding: 0.8rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.6rem;
     }
 
-    .project-btn {
-        padding: 0.6rem 1.5rem;
+    .project-icon {
+        margin-right: 0;
+        margin-bottom: 0.3rem;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .project-icon i {
         font-size: 0.9rem;
+    }
+    
+    .project-info {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .project-info h4 {
+        font-size: 0.95rem;
+        line-height: 1.2;
+    }
+    
+    .project-subtitle {
+        font-size: 0.75rem;
+        margin-bottom: 0.3rem;
+    }
+    
+    .project-status {
+        font-size: 0.65rem;
+        padding: 0.1rem 0.5rem;
+    }
+
+    .dropdown-arrow {
+        margin-left: 0;
+        margin-top: 0.3rem;
+    }
+
+    .project-dropdown-content.active {
+        padding: 0 0.8rem 0.8rem;
+    }
+    
+    .project-details {
+        padding-top: 0.8rem;
+    }
+    
+    .project-description p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 0.8rem;
+    }
+
+    .meta-item {
+        padding: 0.3rem 0;
+        margin-bottom: 0.4rem;
+    }
+    
+    .meta-label {
+        font-size: 0.75rem;
+    }
+
+    .meta-value {
+        font-size: 0.8rem;
+    }
+    
+    .project-achievements h5 {
+        font-size: 0.85rem;
+        margin-bottom: 0.6rem;
+    }
+    
+    .achievement-list li {
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+        gap: 0.5rem;
+    }
+    
+    .achievement-list i {
+        font-size: 0.75rem;
+    }
+    
+    .project-actions {
+        margin-bottom: 0.8rem;
+    }
+    
+    .project-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.8rem;
+        gap: 0.3rem;
+        border-radius: 20px;
     }
 }
 
