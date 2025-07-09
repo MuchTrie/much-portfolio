@@ -385,11 +385,22 @@ function openProjectModal(projectId) {
     const modal = document.getElementById('projectModal');
     const modalTitle = document.getElementById('modalTitle');
     const modalBody = document.getElementById('modalBody');
+    const modalContent = modal.querySelector('.modal-content');
     
     // Get project data
     const projectCard = document.getElementById(projectId).closest('.project-card');
     const projectTitle = projectCard.querySelector('.project-info h4').textContent;
     const projectContent = document.getElementById(projectId).innerHTML;
+    
+    // Check if this is a defense project
+    const isDefenseProject = projectCard.classList.contains('defense-project');
+    
+    // Apply appropriate modal styling
+    if (isDefenseProject) {
+        modalContent.classList.add('defense-modal');
+    } else {
+        modalContent.classList.remove('defense-modal');
+    }
     
     // Set modal content
     modalTitle.textContent = projectTitle;

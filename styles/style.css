@@ -2033,6 +2033,56 @@ body {
     animation: modalSlideIn 0.3s ease-out;
 }
 
+.modal-content.defense-modal {
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 20px 60px rgba(59, 130, 246, 0.4);
+}
+
+.modal-content.defense-modal .modal-header {
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(59, 130, 246, 0.05);
+}
+
+.modal-content.defense-modal .modal-header h3 {
+    color: #3b82f6;
+}
+
+.modal-content.defense-modal .modal-close:hover {
+    background: #3b82f6;
+    color: white;
+}
+
+.modal-content.defense-modal .project-achievements h5 {
+    color: #3b82f6;
+}
+
+/* Defense project buttons in modal - Override all button styles */
+.modal-content.defense-modal .project-btn {
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+    color: white !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+.modal-content.defense-modal .project-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+}
+
+.modal-content.defense-modal .project-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+    color: white !important;
+    border: 1px solid rgba(59, 130, 246, 0.3) !important;
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3) !important;
+}
+
+.modal-content.defense-modal .project-btn.primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4) !important;
+    background: linear-gradient(135deg, #3b82f6, #1e40af) !important;
+}
+
 .modal-header {
     display: flex;
     justify-content: space-between;
@@ -2074,6 +2124,11 @@ body {
     padding: 25px;
     max-height: 70vh;
     overflow-y: auto;
+}
+
+/* Defense Project Card Key Achievements */
+.defense-project .project-achievements h5 {
+    color: #3b82f6;
 }
 
 @keyframes modalSlideIn {
@@ -2267,6 +2322,25 @@ body {
     background: linear-gradient(135deg, #3b82f6, #1e40af);
     color: white;
     border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.defense-project .project-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
+}
+
+/* Defense project buttons in modal */
+.modal-content.defense-modal .project-btn.primary {
+    background: linear-gradient(135deg, #3b82f6, #1e40af);
+    color: white;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+}
+
+.modal-content.defense-modal .project-btn.primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.4);
 }
 
 .defense-project .project-subtitle {
