@@ -11,6 +11,8 @@
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 /* Make each card span the full width */
@@ -38,6 +40,8 @@
     overflow: hidden;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     position: relative;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .cert-provider-card:hover {
@@ -470,30 +474,27 @@
 
 @media (max-width: 768px) {
     .cert-providers-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 1.5rem;
         padding: 0 0.5rem;
-        max-width: 600px;
-    }
-    
-    .cert-provider-card:nth-child(1),
-    .cert-provider-card:nth-child(2),
-    .cert-provider-card:nth-child(3) {
-        grid-column: 1;
-        grid-row: auto;
+        gap: 1.5rem;
     }
     
     .cert-provider-header {
-        padding: 1.8rem 1.3rem;
-        min-height: 90px;
+        padding: 1.5rem 1rem;
+        min-height: 80px;
+        flex-direction: column;
+        text-align: center;
     }
     
     .cert-provider-logo {
-        width: 75px;
-        height: 75px;
-        margin-right: 1.3rem;
-        padding: 9px;
+        width: 70px;
+        height: 70px;
+        margin-right: 0;
+        margin-bottom: 1rem;
+        padding: 8px;
+    }
+    
+    .cert-provider-info {
+        text-align: center;
     }
     
     .cert-provider-info h3 {
@@ -509,12 +510,9 @@
         padding: 0.25rem 0.7rem;
     }
     
-    .cert-provider-content.active {
-        padding: 1.5rem;
-    }
-    
-    .cert-provider-content.active {
-        padding: 1.2rem;
+    .cert-provider-arrow {
+        margin-left: 0;
+        margin-top: 0.5rem;
     }
     
     .cert-item {
@@ -545,20 +543,26 @@
 
 @media (max-width: 480px) {
     .cert-providers-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
         padding: 0 0.25rem;
+        gap: 1.5rem;
     }
     
     .cert-provider-header {
         padding: 1.2rem 1rem;
+        flex-direction: column;
+        text-align: center;
     }
     
     .cert-provider-logo {
         width: 65px;
         height: 65px;
-        margin-right: 1rem;
+        margin-right: 0;
+        margin-bottom: 1rem;
         padding: 6px;
+    }
+    
+    .cert-provider-info {
+        text-align: center;
     }
     
     .cert-provider-info h3 {
@@ -575,25 +579,13 @@
     }
     
     .cert-provider-arrow {
-        margin-left: 1rem;
-        padding: 0.25rem;
-    }
-    
-    .cert-provider-content.active {
-        padding: 1rem;
+        margin-left: 0;
+        margin-top: 0.5rem;
     }
     
     .cert-item {
         padding: 1rem;
         gap: 1rem;
-    }
-    
-    .cert-item-info h4 {
-        font-size: 1rem;
-    }
-    
-    .cert-item-info p {
-        font-size: 0.85rem;
     }
     
     .cert-item-actions {
@@ -612,12 +604,6 @@
 
 /* Ultra-small screens */
 @media (max-width: 360px) {
-    .cert-providers-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-        margin-top: 2rem;
-    }
-    
     .cert-provider-header {
         padding: 1rem 0.8rem;
     }
@@ -709,7 +695,7 @@
 .cert-modal-header {
     display: flex;
     justify-content: flex-end;
-    padding: 1rem 1rem 0 1rem;
+    padding: 1rem;
     position: sticky;
     top: 0;
     background: var(--bg-primary);
@@ -757,7 +743,7 @@
 }
 
 .cert-modal-body {
-    padding: 0 1rem 1rem 1rem;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
 }
 
 .cert-modal-provider {
@@ -767,11 +753,12 @@
 .cert-modal-provider-header {
     display: flex;
     align-items: center;
-    margin-bottom: 1rem;
+    margin-bottom: 1.2rem;
     padding: 1rem;
     background: var(--bg-tertiary);
     border-radius: 16px;
     border: 2px solid var(--primary-color);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .cert-modal-provider-logo {

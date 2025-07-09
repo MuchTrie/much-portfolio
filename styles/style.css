@@ -1097,6 +1097,9 @@ body {
     border: 1px solid rgba(220, 38, 38, 0.3);
     box-shadow: var(--shadow-primary);
     transition: all 0.3s ease;
+    min-height: 850px;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-category:hover {
@@ -1125,6 +1128,9 @@ body {
 
 .project-content {
     text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Defense project category - Blue theme (Left Column) */
@@ -1263,11 +1269,12 @@ body {
 
 /* Scrollable project containers */
 .project-list-scroll {
-    max-height: 500px;
+    max-height: 800px;
     overflow-y: auto;
     padding-right: 10px;
     scrollbar-width: thin;
     scrollbar-color: rgba(220, 38, 38, 0.5) rgba(255, 255, 255, 0.1);
+    flex-grow: 1;
 }
 
 .project-list-scroll::-webkit-scrollbar {
@@ -1545,27 +1552,6 @@ body {
     .loading-dots span {
         width: 6px;
         height: 6px;
-    }
-}
-    
-    .project-category-title i {
-        font-size: 1.5rem;
-    }
-    
-    .maintenance-notice {
-        padding: 30px 20px;
-    }
-    
-    .maintenance-icon {
-        font-size: 2.5rem;
-    }
-    
-    .maintenance-notice h4 {
-        font-size: 1.3rem;
-    }
-
-    .project-list-scroll {
-        max-height: 300px;
     }
 }
 
@@ -2043,7 +2029,7 @@ body {
 }
 
 .project-dropdown-content.active {
-    max-height: 1000px;
+    max-height: 2000px;
     padding: 0 1.5rem 1.5rem;
     opacity: 1;
 }
