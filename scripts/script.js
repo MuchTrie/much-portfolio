@@ -448,3 +448,165 @@ window.addEventListener('resize', function() {
         activeCards.forEach(card => card.classList.remove('active'));
     }
 });
+
+// Certificate Provider Toggle Function
+function toggleCertProvider(certId) {
+    const content = document.getElementById(certId);
+    const card = content.closest('.cert-provider-card');
+    const isCurrentlyActive = content.classList.contains('active');
+    
+    // Check if we're on mobile (≤768px)
+    if (window.innerWidth <= 768) {
+        // On mobile, open modal instead of dropdown
+        openCertModal(card);
+        return;
+    }
+    
+    // Desktop behavior - dropdown toggle
+    // First, close all other open certificates immediately
+    document.querySelectorAll('.cert-provider-content').forEach(otherContent => {
+        if (otherContent !== content) {
+            otherContent.classList.remove('active');
+            otherContent.closest('.cert-provider-card').classList.remove('active');
+        }
+    });
+    
+    // Then toggle the current certificate
+    if (isCurrentlyActive) {
+        content.classList.remove('active');
+        card.classList.remove('active');
+    } else {
+        content.classList.add('active');
+        card.classList.add('active');
+    }
+}
+
+// Open Certificate Modal (Mobile Only)
+function openCertModal(card) {
+    const modal = document.getElementById('certModal');
+    const modalBody = modal.querySelector('.cert-modal-body');
+    
+    // Extract card data
+    const logo = card.querySelector('.cert-provider-logo img');
+    const providerName = card.querySelector('.cert-provider-info h3').textContent;
+    const providerDesc = card.querySelector('.cert-provider-info p').textContent;
+    const certCount = card.querySelector('.cert-count').textContent;
+    const certItems = card.querySelectorAll('.cert-item');
+    
+    // Build modal content
+    let modalContent = `
+        <div class="cert-modal-provider">
+            <div class="cert-modal-provider-header">
+                <div class="cert-modal-provider-logo">
+                    <img src="${logo.src}" alt="${logo.alt}">
+                </div>
+                <div class="cert-modal-provider-info">
+                    <h3>${providerName}</h3>
+                    <p>${providerDesc}</p>
+                    <span class="cert-count">${certCount}</span>
+                </div>
+            </div>
+            <div class="cert-modal-certs">
+    `;
+    
+    // Add each certificate item
+    certItems.forEach(item => {
+        const title = item.querySelector('h4').textContent;
+        const description = item.querySelector('p').textContent;
+        const viewBtn = item.querySelector('.cert-btn:not(.cert-validate)');
+        const validateBtn = item.querySelector('.cert-validate');
+        
+        modalContent += `
+            <div class="cert-modal-item">
+                <div class="cert-modal-item-info">
+                    <h4>${title}</h4>
+                    <p>${description}</p>
+                </div>
+                <div class="cert-modal-item-actions">
+        `;
+        
+        if (viewBtn) {
+            modalContent += `
+                <a href="${viewBtn.href}" class="cert-modal-btn" target="_blank">
+                    <i class="fas fa-eye"></i> View
+                </a>
+            `;
+        }
+        
+        if (validateBtn) {
+            modalContent += `
+                <a href="${validateBtn.href}" class="cert-modal-btn cert-validate" target="_blank">
+                    <i class="fas fa-check-circle"></i> Validate
+                </a>
+            `;
+        }
+        
+        modalContent += `
+                </div>
+            </div>
+        `;
+    });
+    
+    modalContent += `
+            </div>
+        </div>
+    `;
+    
+    // Insert content and show modal
+    modalBody.innerHTML = modalContent;
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Close Certificate Modal
+function closeCertModal() {
+    const modal = document.getElementById('certModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    
+    // Clear modal content after animation
+    setTimeout(() => {
+        if (!modal.classList.contains('active')) {
+            modal.querySelector('.cert-modal-body').innerHTML = '';
+        }
+    }, 300);
+}
+
+// Handle window resize to close modal if screen becomes larger
+window.addEventListener('resize', function() {
+    if (window.innerWidth > 768) {
+        closeCertModal();
+    }
+});
+
+// Handle escape key to close modal
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && document.getElementById('certModal').classList.contains('active')) {
+        closeCertModal();
+    }
+});
+
+// Add smooth scrolling behavior for certificate section
+document.addEventListener('DOMContentLoaded', function() {
+    // Add intersection observer for certificate cards animation
+    const certCards = document.querySelectorAll('.cert-provider-card');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    certCards.forEach(card => {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(30px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(card);
+    });
+});
