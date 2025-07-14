@@ -13,56 +13,19 @@
         threshold: 160
     };
     
-    // Fungsi untuk menampilkan pesan blokir
+    // Fungsi untuk menampilkan pesan blokir (disabled)
     function showBlockMessage() {
-        document.documentElement.innerHTML = `
-            <div style="
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100vw;
-                height: 100vh;
-                background: #000;
-                color: #f00;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                z-index: 999999;
-                font-size: 2rem;
-                font-family: Arial, sans-serif;
-                text-align: center;
-                user-select: none;
-                -webkit-user-select: none;
-                -moz-user-select: none;
-                -ms-user-select: none;
-            ">
-                <div style="font-size: 4rem; margin-bottom: 20px;">🔒</div>
-                <div>AKSES DEVELOPER TOOLS DIBLOKIR</div>
-                <div style="font-size: 1rem; margin-top: 20px; color: #ccc;">
-                    Unauthorized access detected
-                </div>
-            </div>
-        `;
-        
-        setTimeout(function() {
-            window.location.replace('/');
-        }, config.redirectDelay);
-    }
-    
-    // Deteksi DevTools dengan berbagai metode
-    function detectDevTools() {
-        var widthDiff = window.outerWidth - window.innerWidth;
-        var heightDiff = window.outerHeight - window.innerHeight;
-        
-        if (widthDiff > config.threshold || heightDiff > config.threshold) {
-            showBlockMessage();
-            return true;
-        }
+        // DevTools blocking disabled - function kept for compatibility
         return false;
     }
     
-    // Handler untuk keyboard events
+    // Deteksi DevTools (disabled)
+    function detectDevTools() {
+        // DevTools detection disabled - function kept for compatibility
+        return false;
+    }
+    
+    // Handler untuk keyboard events (DevTools shortcuts disabled)
     function handleKeyDown(e) {
         var key = e.key;
         var code = e.keyCode || e.which;
@@ -70,68 +33,38 @@
         var shift = e.shiftKey;
         var alt = e.altKey;
         
-        // F12 - Developer Tools
-        if (key === 'F12' || code === 123) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showBlockMessage();
-            return false;
-        }
+        // F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+Shift+C - Allow DevTools
+        // (DevTools blocking removed)
         
-        // Ctrl+Shift+I - Inspect Element
-        if (ctrl && shift && (key === 'I' || key === 'i' || code === 73)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showBlockMessage();
-            return false;
-        }
-        
-        // Ctrl+Shift+J - Console
-        if (ctrl && shift && (key === 'J' || key === 'j' || code === 74)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showBlockMessage();
-            return false;
-        }
-        
-        // Ctrl+Shift+C - Select Element
-        if (ctrl && shift && (key === 'C' || key === 'c' || code === 67)) {
-            e.preventDefault();
-            e.stopImmediatePropagation();
-            showBlockMessage();
-            return false;
-        }
-        
-        // Ctrl+U - View Source
+        // Ctrl+U - View Source (still blocked for security)
         if (ctrl && !shift && !alt && (key === 'U' || key === 'u' || code === 85)) {
             e.preventDefault();
             e.stopImmediatePropagation();
-            showBlockMessage();
             return false;
         }
         
-        // Ctrl+S - Save
+        // Ctrl+S - Save (still blocked for security)
         if (ctrl && (key === 'S' || key === 's' || code === 83)) {
             e.preventDefault();
             e.stopImmediatePropagation();
             return false;
         }
         
-        // Ctrl+A - Select All
+        // Ctrl+A - Select All (still blocked for security)
         if (ctrl && (key === 'A' || key === 'a' || code === 65)) {
             e.preventDefault();
             e.stopImmediatePropagation();
             return false;
         }
         
-        // Ctrl+P - Print
+        // Ctrl+P - Print (still blocked for security)
         if (ctrl && (key === 'P' || key === 'p' || code === 80)) {
             e.preventDefault();
             e.stopImmediatePropagation();
             return false;
         }
         
-        // F11 - Fullscreen
+        // F11 - Fullscreen (still blocked for security)
         if (key === 'F11' || code === 122) {
             e.preventDefault();
             e.stopImmediatePropagation();
@@ -146,8 +79,9 @@
         return false;
     }
     
-    // Disable console dengan berbagai metode
+    // Disable console dengan berbagai metode (optional - can be disabled)
     function disableConsole() {
+        // Console blocking optional - can be commented out if needed
         var noop = function() { return undefined; };
         var methods = [
             'log', 'clear', 'error', 'warn', 'info', 'debug', 'trace',
@@ -227,31 +161,10 @@
         }, true);
     }
     
-    // Setup DevTools detection
+    // Setup DevTools detection (disabled)
     function setupDevToolsDetection() {
-        // Multiple detection intervals
-        setInterval(detectDevTools, config.checkInterval);
-        setInterval(detectDevTools, 100);
-        setInterval(detectDevTools, 200);
-        
-        // Window events
-        window.addEventListener('resize', detectDevTools, true);
-        window.addEventListener('blur', function() {
-            setTimeout(detectDevTools, 50);
-        }, true);
-        window.addEventListener('focus', detectDevTools, true);
-        
-        // Console detection
-        var devtools = {open: false, orientation: null};
-        setInterval(function() {
-            if (window.outerHeight - window.innerHeight > 160 || 
-                window.outerWidth - window.innerWidth > 160) {
-                if (!devtools.open) {
-                    devtools.open = true;
-                    showBlockMessage();
-                }
-            }
-        }, 100);
+        // DevTools detection disabled - function kept for compatibility
+        console.log('DevTools detection disabled');
     }
     
     // Inject CSS untuk disable text selection
