@@ -1079,14 +1079,92 @@ body {
     z-index: 2;
 }
 
-/* Projects Wrapper for two-column layout */
-.projects-wrapper {
+/* Projects Wrapper for single card layout */
+.projects-main-card {
     position: relative;
     z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(220, 38, 38, 0.3);
+    box-shadow: var(--shadow-primary);
     margin-top: 40px;
+    min-height: 800px;
+}
+
+.projects-scrollable-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-height: 700px;
+    overflow-y: auto;
+    padding-right: 10px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(220, 38, 38, 0.5) rgba(255, 255, 255, 0.1);
+}
+
+.projects-scrollable-menu::-webkit-scrollbar {
+    width: 8px;
+}
+
+.projects-scrollable-menu::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.projects-scrollable-menu::-webkit-scrollbar-thumb {
+    background: rgba(220, 38, 38, 0.5);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.projects-scrollable-menu::-webkit-scrollbar-thumb:hover {
+    background: rgba(220, 38, 38, 0.7);
+}
+
+.project-type {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-type:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-color: rgba(220, 38, 38, 0.5);
+}
+
+.project-type-header-inside {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-type-header-inside .project-type-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.project-type-header-inside .project-type-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    opacity: 0.8;
+}
+
+/* Adjust cybersecurity type for larger content */
+.cybersecurity-type {
+    grid-column: 1 / -1;
+    min-height: 400px;
 }
 
 .project-category {
@@ -1430,26 +1508,36 @@ body {
         min-height: auto;
     }
     
-    .projects-wrapper {
-        grid-template-columns: 1fr;
-        gap: 25px;
+    .projects-main-card {
+        padding: 25px;
         margin-top: 30px;
-    }
-    
-    .project-category {
-        padding: 20px;
-        border-radius: 15px;
-        margin-bottom: 0;
         min-height: auto;
     }
     
-    .project-category-title {
-        font-size: 1.4rem;
-        gap: 10px;
+    .projects-scrollable-menu {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-height: 600px;
     }
     
-    .project-category-title i {
-        font-size: 1.6rem;
+    .project-type {
+        padding: 20px;
+        border-radius: 12px;
+        min-height: 250px;
+    }
+    
+    .cybersecurity-type {
+        grid-column: 1;
+        min-height: 350px;
+    }
+    
+    .project-type-header-inside .project-type-title {
+        font-size: 1.3rem;
+    }
+    
+    .project-type-header-inside .project-type-subtitle {
+        font-size: 0.8rem;
+    }
     }
     
     .project-header {

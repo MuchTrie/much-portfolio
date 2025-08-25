@@ -1,35 +1,63 @@
-<!-- Projects Section -->
+<!-- Projects Section (grouped by Type) -->
 <section id="projects" class="projects">
     <div class="container">
         <h2 class="section-title">My Projects</h2>
-        <div class="projects-wrapper">
-            <!-- Defense Projects (Left Column) -->
-            <div class="project-category defense-category">
-                <div class="project-header">
-                    <h3 class="project-category-title">🛡️ Defense</h3>
+        <div class="projects-main-card">
+            <div class="projects-scrollable-menu">
+                <!-- Web Development Type (gabungan Cloud Computing + Programming) -->
+                <div class="project-type webdev-type">
+                    <div class="project-type-header-inside">
+                        <h3 class="project-type-title">💻 Web Development</h3>
+                        <p class="project-type-subtitle">Full-Stack & Cloud Solutions</p>
+                    </div>
+                    <div class="project-type-content">
+                        <div class="maintenance-notice">
+                            <div class="maintenance-icon"><i class="fas fa-code"></i></div>
+                            <h4>Coming Soon</h4>
+                            <p>Web development & cloud infrastructure projects will be added.</p>
+                            <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="project-content">
-                    <div class="project-list-scroll">
-                        <!-- Server Security Project -->
+
+                <!-- Artificial Intelligence Type -->
+                <div class="project-type ml-type">
+                    <div class="project-type-header-inside">
+                        <h3 class="project-type-title">🤖 Artificial Intelligence</h3>
+                        <p class="project-type-subtitle">Data & Model Driven Projects</p>
+                    </div>
+                    <div class="project-type-content">
+                        <div class="maintenance-notice">
+                            <div class="maintenance-icon"><i class="fas fa-brain"></i></div>
+                            <h4>Coming Soon</h4>
+                            <p>Artificial Intelligence projects are being prepared.</p>
+                            <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Type -->
+                <div class="project-type cybersecurity-type">
+                    <div class="project-type-header-inside">
+                        <h3 class="project-type-title">🔐 Cybersecurity</h3>
+                        <p class="project-type-subtitle">Defense & Offensive Security Projects</p>
+                    </div>
+                <div class="project-type-content">
+                    <div class="cybersecurity-projects-grid">
+                        <!-- Defense Projects (Blue theme) -->
                         <div class="project-card defense-project">
                             <div class="project-card-header" onclick="toggleProjectDropdown('server-security-project')">
-                                <div class="project-icon">
-                                    <i class="fas fa-server"></i>
-                                </div>
+                                <div class="project-icon"><i class="fas fa-server"></i></div>
                                 <div class="project-info">
-                                    <h4>Server Security Hardening</h4>
+                                    <h4>🛡️ Server Security Hardening</h4>
                                     <p class="project-subtitle">Server Defense & Configuration</p>
                                     <span class="project-status completed">Completed</span>
                                 </div>
-                                <div class="dropdown-arrow">
-                                    <i class="fas fa-chevron-down"></i>
-                                </div>
+                                <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
                             </div>
                             <div class="project-dropdown-content" id="server-security-project">
                                 <div class="project-details">
-                                    <div class="project-description">
-                                        <p>Comprehensive demonstration of building and hardening server security from scratch, implementing layered defense to protect against unauthorized access and common threats.</p>
-                                    </div>
+                                    <div class="project-description"><p>Comprehensive demonstration of building and hardening server security from scratch, implementing layered defense to protect against unauthorized access and common threats.</p></div>
                                     <div class="project-meta">
                                         <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Server Hardening</span></div>
                                         <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Defense Implementation</span></div>
@@ -45,18 +73,16 @@
                                             <li><i class="fas fa-check"></i> Configured firewall to restrict incoming connections from authorized sources only</li>
                                         </ul>
                                     </div>
-                                    <div class="project-actions">
-                                        <a href="https://youtu.be/29IujrTLgp8" target="_blank" class="project-btn primary"><i class="fab fa-youtube"></i> Watch Demo</a>
-                                    </div>
+                                    <div class="project-actions"><a href="https://youtu.be/29IujrTLgp8" target="_blank" class="project-btn primary"><i class="fab fa-youtube"></i> Watch Demo</a></div>
                                 </div>
                             </div>
                         </div>
-                        <!-- GeneCare Security Case Study Project -->
+
                         <div class="project-card defense-project">
                             <div class="project-card-header" onclick="toggleProjectDropdown('genecare-security-project')">
                                 <div class="project-icon"><i class="fas fa-dna"></i></div>
                                 <div class="project-info">
-                                    <h4>GeneCare Security Case Study</h4>
+                                    <h4>🛡️ GeneCare Security Case Study</h4>
                                     <p class="project-subtitle">DNA & Medical Data Protection</p>
                                     <span class="project-status completed">Completed</span>
                                 </div>
@@ -64,9 +90,7 @@
                             </div>
                             <div class="project-dropdown-content" id="genecare-security-project">
                                 <div class="project-details">
-                                    <div class="project-description">
-                                        <p>A comprehensive web security implementation report, designing and building layered defense systems for the fictional healthcare platform "GeneCare". This project focuses on protecting highly sensitive user data, such as genetic (DNA) and medical records, from various cyber threats.</p>
-                                    </div>
+                                    <div class="project-description"><p>A comprehensive web security implementation report, designing and building layered defense systems for the fictional healthcare platform "GeneCare". This project focuses on protecting highly sensitive user data, such as genetic (DNA) and medical records, from various cyber threats.</p></div>
                                     <div class="project-meta">
                                         <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Web Application Security</span></div>
                                         <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Final Exam Report</span></div>
@@ -84,34 +108,17 @@
                                             <li><i class="fas fa-check"></i> Implemented secure key management using external service (Doppler)</li>
                                         </ul>
                                     </div>
-                                    <div class="project-actions">
-                                        <a href="https://drive.google.com/file/d/1UQYZj_KlVORjjHioLP0PRYKqm9BCIC3J/view?usp=drive_link" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a>
-                                    </div>
+                                    <div class="project-actions"><a href="https://drive.google.com/file/d/1UQYZj_KlVORjjHioLP0PRYKqm9BCIC3J/view?usp=drive_link" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="maintenance-notice">
-                            <div class="maintenance-icon"><i class="fas fa-code"></i></div>
-                            <h4>Under Development</h4>
-                            <p>More defense projects coming soon!</p>
-                            <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Attack Projects (Right Column) -->
-            <div class="project-category attack-category">
-                <div class="project-header">
-                    <h3 class="project-category-title">⚔️ Attack</h3>
-                </div>
-                <div class="project-content">
-                    <div class="project-list-scroll">
-                        <!-- SQL Injection Penetration Testing Project -->
+
+                        <!-- Attack Projects (Red theme) -->
                         <div class="project-card attack-project">
                             <div class="project-card-header" onclick="toggleProjectDropdown('sql-injection-project')">
                                 <div class="project-icon"><i class="fas fa-globe"></i></div>
                                 <div class="project-info">
-                                    <h4>SQL Injection Penetration Testing</h4>
+                                    <h4>⚔️ SQL Injection Penetration Testing</h4>
                                     <p class="project-subtitle">Web Application Security</p>
                                     <span class="project-status completed">Completed</span>
                                 </div>
@@ -139,12 +146,12 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Red Team Security Assessment Project -->
+
                         <div class="project-card attack-project">
                             <div class="project-card-header" onclick="toggleProjectDropdown('red-team-project')">
                                 <div class="project-icon"><i class="fas fa-user-ninja"></i></div>
                                 <div class="project-info">
-                                    <h4>Red Team Security Assessment</h4>
+                                    <h4>⚔️ Red Team Security Assessment</h4>
                                     <p class="project-subtitle">Web Application Security</p>
                                     <span class="project-status completed">Completed</span>
                                 </div>
@@ -172,15 +179,13 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="maintenance-notice attack-maintenance">
-                            <div class="maintenance-icon attack-icon"><i class="fas fa-code"></i></div>
-                            <h4>Under Development</h4>
-                            <p>More attack projects coming soon!</p>
-                            <div class="maintenance-animation attack-animation"><div class="loading-dots attack-dots"><span></span><span></span><span></span></div></div>
-                        </div>
                     </div>
                 </div>
             </div>
+
+            
+
+
         </div>
     </div>
 </section>
