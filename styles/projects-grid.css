@@ -326,7 +326,7 @@
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-height: 180px; /* Set minimum height untuk cards */
+    min-height: 220px; /* Perpanjang card dari 180px jadi 220px */
 }
 
 .webdev-project-card:hover {
@@ -558,7 +558,7 @@
     }
     
     .webdev-project-card {
-        min-height: 160px; /* Set minimum height untuk mobile */
+        min-height: 200px; /* Perpanjang untuk mobile dari 160px jadi 200px */
     }
     
     .under-dev-content {
@@ -596,7 +596,7 @@
     }
     
     .webdev-project-card {
-        min-height: 140px; /* Set minimum height untuk mobile kecil */
+        min-height: 180px; /* Perpanjang untuk mobile kecil dari 140px jadi 180px */
     }
     
     .under-dev-content {
