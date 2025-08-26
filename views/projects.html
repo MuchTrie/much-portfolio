@@ -3,189 +3,248 @@
     <div class="container">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-main-card">
-            <div class="projects-scrollable-menu">
-                <!-- Web Development Type (gabungan Cloud Computing + Programming) -->
-                <div class="project-type webdev-type">
-                    <div class="project-type-header-inside">
-                        <h3 class="project-type-title">💻 Web Development</h3>
-                        <p class="project-type-subtitle">Full-Stack & Cloud Solutions</p>
+            <!-- Grid Layout: 2x1 Top Row + 1x Full Width Bottom Row -->
+            <div class="projects-grid-container">
+                <!-- Top Row: 2 columns -->
+                <div class="projects-top-row">
+                    <!-- Cybersecurity Card (Left) -->
+                    <div class="project-grid-card cybersecurity-card">
+                        <div class="project-grid-header">
+                            <h3 class="project-type-title">🔐 Cybersecurity</h3>
+                            <p class="project-type-subtitle">Defense & Offensive Security Projects</p>
+                        </div>
+                        <div class="project-grid-content">
+                            <div class="cybersecurity-projects-grid">
+                                <!-- Defense Projects (Blue theme) -->
+                                <div class="project-card defense-project">
+                                    <div class="project-card-header" onclick="toggleProjectDropdown('server-security-project')">
+                                        <div class="project-icon"><i class="fas fa-server"></i></div>
+                                        <div class="project-info">
+                                            <h4>🛡️ Server Security Hardening</h4>
+                                            <p class="project-subtitle">Server Defense & Configuration</p>
+                                            <span class="project-status completed">Completed</span>
+                                        </div>
+                                        <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+                                    </div>
+                                    <div class="project-dropdown-content" id="server-security-project">
+                                        <div class="project-details">
+                                            <div class="project-description"><p>Comprehensive demonstration of building and hardening server security from scratch, implementing layered defense to protect against unauthorized access and common threats.</p></div>
+                                            <div class="project-meta">
+                                                <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Server Hardening</span></div>
+                                                <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Defense Implementation</span></div>
+                                                <div class="meta-item"><span class="meta-label">OS Server:</span><span class="meta-value">Linux Ubuntu</span></div>
+                                                <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">SSH, Google Authenticator (MFA), UFW, Nginx, OpenSSL</span></div>
+                                            </div>
+                                            <div class="project-achievements">
+                                                <h5>Key Achievements:</h5>
+                                                <ul class="achievement-list">
+                                                    <li><i class="fas fa-check"></i> Implemented Multi-Factor Authentication (MFA) on SSH to prevent unauthorized access</li>
+                                                    <li><i class="fas fa-check"></i> Secured web server deployment with Nginx and applied IP-based access restrictions</li>
+                                                    <li><i class="fas fa-check"></i> Deployed encrypted communication (HTTPS) to protect data traffic</li>
+                                                    <li><i class="fas fa-check"></i> Configured firewall to restrict incoming connections from authorized sources only</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-actions"><a href="https://youtu.be/29IujrTLgp8" target="_blank" class="project-btn primary"><i class="fab fa-youtube"></i> Watch Demo</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-card defense-project">
+                                    <div class="project-card-header" onclick="toggleProjectDropdown('genecare-security-project')">
+                                        <div class="project-icon"><i class="fas fa-dna"></i></div>
+                                        <div class="project-info">
+                                            <h4>🛡️ GeneCare Security Case Study</h4>
+                                            <p class="project-subtitle">DNA & Medical Data Protection</p>
+                                            <span class="project-status completed">Completed</span>
+                                        </div>
+                                        <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+                                    </div>
+                                    <div class="project-dropdown-content" id="genecare-security-project">
+                                        <div class="project-details">
+                                            <div class="project-description"><p>A comprehensive web security implementation report, designing and building layered defense systems for the fictional healthcare platform "GeneCare". This project focuses on protecting highly sensitive user data, such as genetic (DNA) and medical records, from various cyber threats.</p></div>
+                                            <div class="project-meta">
+                                                <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Web Application Security</span></div>
+                                                <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Final Exam Report</span></div>
+                                                <div class="meta-item"><span class="meta-label">Case Study:</span><span class="meta-value"> Healthcare Platform "GeneCare"</span></div>
+                                                <div class="meta-item"><span class="meta-label">Primary Technologies:</span><span class="meta-value">PHP, HTTPS/TLS, AES-256 Encryption, Password Hashing, Prepared Statements, Doppler</span></div>
+                                            </div>
+                                            <div class="project-achievements">
+                                                <h5>Key Achievements:</h5>
+                                                <ul class="achievement-list">
+                                                    <li><i class="fas fa-check"></i> Implemented AES-256 encryption for sensitive DNA and medical data in database</li>
+                                                    <li><i class="fas fa-check"></i> Secured authentication with Account Lockout, Captcha verification, and password hashing</li>
+                                                    <li><i class="fas fa-check"></i> Prevented SQL Injection attacks using Prepared Statements</li>
+                                                    <li><i class="fas fa-check"></i> Built secure registration system with input validation and strong password policies</li>
+                                                    <li><i class="fas fa-check"></i> Secured data transmission with HTTPS/TLS encryption</li>
+                                                    <li><i class="fas fa-check"></i> Implemented secure key management using external service (Doppler)</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-actions"><a href="https://drive.google.com/file/d/1UQYZj_KlVORjjHioLP0PRYKqm9BCIC3J/view?usp=drive_link" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Attack Projects (Red theme) -->
+                                <div class="project-card attack-project">
+                                    <div class="project-card-header" onclick="toggleProjectDropdown('sql-injection-project')">
+                                        <div class="project-icon"><i class="fas fa-globe"></i></div>
+                                        <div class="project-info">
+                                            <h4>⚔️ SQL Injection Penetration Testing</h4>
+                                            <p class="project-subtitle">Web Application Security</p>
+                                            <span class="project-status completed">Completed</span>
+                                        </div>
+                                        <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+                                    </div>
+                                    <div class="project-dropdown-content" id="sql-injection-project">
+                                        <div class="project-details">
+                                            <div class="project-description"><p>Comprehensive penetration testing documenting critical Time-Based Blind SQL Injection vulnerability on government domain endpoint.</p></div>
+                                            <div class="project-meta">
+                                                <div class="meta-item"><span class="meta-label">Vulnerability Type:</span><span class="meta-value">Time-Based Blind SQL Injection</span></div>
+                                                <div class="meta-item"><span class="meta-label">Related CVE:</span><span class="meta-value">CVE-2023-32315, CVE-2022-1388</span></div>
+                                                <div class="meta-item"><span class="meta-label">CVSS Score:</span><span class="meta-value critical">9.8 (Critical)</span></div>
+                                                <div class="meta-item"><span class="meta-label">Target Domain:</span><span class="meta-value">Government (.mil.id)</span></div>
+                                                <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">X-Ray, SQLMap</span></div>
+                                            </div>
+                                            <div class="project-achievements">
+                                                <h5>Key Achievements:</h5>
+                                                <ul class="achievement-list">
+                                                    <li><i class="fas fa-check"></i> Database structure extraction</li>
+                                                    <li><i class="fas fa-check"></i> Sensitive data enumeration</li>
+                                                    <li><i class="fas fa-check"></i> Complete vulnerability documentation</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-actions"><a href="https://drive.google.com/file/d/18XChfVXgTIwA2qjPDsIMkeKO3Nb4fB_N/view?usp=sharing" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="project-card attack-project">
+                                    <div class="project-card-header" onclick="toggleProjectDropdown('red-team-project')">
+                                        <div class="project-icon"><i class="fas fa-user-ninja"></i></div>
+                                        <div class="project-info">
+                                            <h4>⚔️ Red Team Security Assessment</h4>
+                                            <p class="project-subtitle">Web Application Security</p>
+                                            <span class="project-status completed">Completed</span>
+                                        </div>
+                                        <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
+                                    </div>
+                                    <div class="project-dropdown-content" id="red-team-project">
+                                        <div class="project-details">
+                                            <div class="project-description"><p>Comprehensive red team assessment conducted during Network Security final exam simulation, involving exploitation of assigned web application to identify real security vulnerabilities.</p></div>
+                                            <div class="project-meta">
+                                                <div class="meta-item"><span class="meta-label">Assessment Type:</span><span class="meta-value">Red Team Security Assessment</span></div>
+                                                <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Final Exam Simulation</span></div>
+                                                <div class="meta-item"><span class="meta-label">Target Application:</span><span class="meta-value">Assigned Web Application</span></div>
+                                                <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">Gobuster, Wappalyzer, GitHub, phpMyAdmin</span></div>
+                                            </div>
+                                            <div class="project-achievements">
+                                                <h5>Key Achievements:</h5>
+                                                <ul class="achievement-list">
+                                                    <li><i class="fas fa-check"></i> Gained unauthorized database access</li>
+                                                    <li><i class="fas fa-check"></i> Discovered leaked .env file on GitHub</li>
+                                                    <li><i class="fas fa-check"></i> Performed database structure exfiltration</li>
+                                                    <li><i class="fas fa-check"></i> Documented vulnerabilities & provided mitigation</li>
+                                                </ul>
+                                            </div>
+                                            <div class="project-actions"><a href="https://drive.google.com/file/d/1D4mNGKAlbHJ1fUN4RRNyOKplHV1jqvF4/view?usp=sharing" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Assessment Report</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="project-type-content">
-                        <div class="maintenance-notice">
-                            <div class="maintenance-icon"><i class="fas fa-code"></i></div>
-                            <h4>Coming Soon</h4>
-                            <p>Web development & cloud infrastructure projects will be added.</p>
-                            <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+
+                    <!-- AI Card (Right) -->
+                    <div class="project-grid-card ai-card">
+                        <div class="project-grid-header">
+                            <h3 class="project-type-title">🤖 Artificial Intelligence</h3>
+                            <p class="project-type-subtitle">Data & Model Driven Projects</p>
+                        </div>
+                        <div class="project-grid-content">
+                            <div class="maintenance-notice">
+                                <div class="maintenance-icon"><i class="fas fa-brain"></i></div>
+                                <h4>Coming Soon</h4>
+                                <p>Artificial Intelligence projects are being prepared.</p>
+                                <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Artificial Intelligence Type -->
-                <div class="project-type ml-type">
-                    <div class="project-type-header-inside">
-                        <h3 class="project-type-title">🤖 Artificial Intelligence</h3>
-                        <p class="project-type-subtitle">Data & Model Driven Projects</p>
-                    </div>
-                    <div class="project-type-content">
-                        <div class="maintenance-notice">
-                            <div class="maintenance-icon"><i class="fas fa-brain"></i></div>
-                            <h4>Coming Soon</h4>
-                            <p>Artificial Intelligence projects are being prepared.</p>
-                            <div class="maintenance-animation"><div class="loading-dots"><span></span><span></span><span></span></div></div>
+                <!-- Bottom Row: Full Width -->
+                <div class="projects-bottom-row">
+                    <!-- Web Development Card (Full Width) -->
+                    <div class="project-grid-card webdev-card">
+                        <div class="project-grid-header">
+                            <h3 class="project-type-title">💻 Web Development</h3>
+                            <p class="project-type-subtitle">Full-Stack & Cloud Solutions</p>
                         </div>
-                    </div>
-                </div>
+                        <div class="project-grid-content">
+                            <div class="webdev-projects-grid">
+                                <!-- Under Development Card 1 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-desktop"></i></div>
+                                        <h4>Website Project</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
 
-                <!-- Cybersecurity Type -->
-                <div class="project-type cybersecurity-type">
-                    <div class="project-type-header-inside">
-                        <h3 class="project-type-title">🔐 Cybersecurity</h3>
-                        <p class="project-type-subtitle">Defense & Offensive Security Projects</p>
-                    </div>
-                <div class="project-type-content">
-                    <div class="cybersecurity-projects-grid">
-                        <!-- Defense Projects (Blue theme) -->
-                        <div class="project-card defense-project">
-                            <div class="project-card-header" onclick="toggleProjectDropdown('server-security-project')">
-                                <div class="project-icon"><i class="fas fa-server"></i></div>
-                                <div class="project-info">
-                                    <h4>🛡️ Server Security Hardening</h4>
-                                    <p class="project-subtitle">Server Defense & Configuration</p>
-                                    <span class="project-status completed">Completed</span>
-                                </div>
-                                <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
-                            </div>
-                            <div class="project-dropdown-content" id="server-security-project">
-                                <div class="project-details">
-                                    <div class="project-description"><p>Comprehensive demonstration of building and hardening server security from scratch, implementing layered defense to protect against unauthorized access and common threats.</p></div>
-                                    <div class="project-meta">
-                                        <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Server Hardening</span></div>
-                                        <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Defense Implementation</span></div>
-                                        <div class="meta-item"><span class="meta-label">OS Server:</span><span class="meta-value">Linux Ubuntu</span></div>
-                                        <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">SSH, Google Authenticator (MFA), UFW, Nginx, OpenSSL</span></div>
+                                <!-- Under Development Card 2 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-shopping-cart"></i></div>
+                                        <h4>E-Commerce</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
                                     </div>
-                                    <div class="project-achievements">
-                                        <h5>Key Achievements:</h5>
-                                        <ul class="achievement-list">
-                                            <li><i class="fas fa-check"></i> Implemented Multi-Factor Authentication (MFA) on SSH to prevent unauthorized access</li>
-                                            <li><i class="fas fa-check"></i> Secured web server deployment with Nginx and applied IP-based access restrictions</li>
-                                            <li><i class="fas fa-check"></i> Deployed encrypted communication (HTTPS) to protect data traffic</li>
-                                            <li><i class="fas fa-check"></i> Configured firewall to restrict incoming connections from authorized sources only</li>
-                                        </ul>
-                                    </div>
-                                    <div class="project-actions"><a href="https://youtu.be/29IujrTLgp8" target="_blank" class="project-btn primary"><i class="fab fa-youtube"></i> Watch Demo</a></div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-card defense-project">
-                            <div class="project-card-header" onclick="toggleProjectDropdown('genecare-security-project')">
-                                <div class="project-icon"><i class="fas fa-dna"></i></div>
-                                <div class="project-info">
-                                    <h4>🛡️ GeneCare Security Case Study</h4>
-                                    <p class="project-subtitle">DNA & Medical Data Protection</p>
-                                    <span class="project-status completed">Completed</span>
-                                </div>
-                                <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
-                            </div>
-                            <div class="project-dropdown-content" id="genecare-security-project">
-                                <div class="project-details">
-                                    <div class="project-description"><p>A comprehensive web security implementation report, designing and building layered defense systems for the fictional healthcare platform "GeneCare". This project focuses on protecting highly sensitive user data, such as genetic (DNA) and medical records, from various cyber threats.</p></div>
-                                    <div class="project-meta">
-                                        <div class="meta-item"><span class="meta-label">Project Type:</span><span class="meta-value">Web Application Security</span></div>
-                                        <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Final Exam Report</span></div>
-                                        <div class="meta-item"><span class="meta-label">Case Study:</span><span class="meta-value"> Healthcare Platform "GeneCare"</span></div>
-                                        <div class="meta-item"><span class="meta-label">Primary Technologies:</span><span class="meta-value">PHP, HTTPS/TLS, AES-256 Encryption, Password Hashing, Prepared Statements, Doppler</span></div>
+                                <!-- Under Development Card 3 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-user"></i></div>
+                                        <h4>Portfolio Site</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
                                     </div>
-                                    <div class="project-achievements">
-                                        <h5>Key Achievements:</h5>
-                                        <ul class="achievement-list">
-                                            <li><i class="fas fa-check"></i> Implemented AES-256 encryption for sensitive DNA and medical data in database</li>
-                                            <li><i class="fas fa-check"></i> Secured authentication with Account Lockout, Captcha verification, and password hashing</li>
-                                            <li><i class="fas fa-check"></i> Prevented SQL Injection attacks using Prepared Statements</li>
-                                            <li><i class="fas fa-check"></i> Built secure registration system with input validation and strong password policies</li>
-                                            <li><i class="fas fa-check"></i> Secured data transmission with HTTPS/TLS encryption</li>
-                                            <li><i class="fas fa-check"></i> Implemented secure key management using external service (Doppler)</li>
-                                        </ul>
-                                    </div>
-                                    <div class="project-actions"><a href="https://drive.google.com/file/d/1UQYZj_KlVORjjHioLP0PRYKqm9BCIC3J/view?usp=drive_link" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a></div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <!-- Attack Projects (Red theme) -->
-                        <div class="project-card attack-project">
-                            <div class="project-card-header" onclick="toggleProjectDropdown('sql-injection-project')">
-                                <div class="project-icon"><i class="fas fa-globe"></i></div>
-                                <div class="project-info">
-                                    <h4>⚔️ SQL Injection Penetration Testing</h4>
-                                    <p class="project-subtitle">Web Application Security</p>
-                                    <span class="project-status completed">Completed</span>
-                                </div>
-                                <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
-                            </div>
-                            <div class="project-dropdown-content" id="sql-injection-project">
-                                <div class="project-details">
-                                    <div class="project-description"><p>Comprehensive penetration testing documenting critical Time-Based Blind SQL Injection vulnerability on government domain endpoint.</p></div>
-                                    <div class="project-meta">
-                                        <div class="meta-item"><span class="meta-label">Vulnerability Type:</span><span class="meta-value">Time-Based Blind SQL Injection</span></div>
-                                        <div class="meta-item"><span class="meta-label">Related CVE:</span><span class="meta-value">CVE-2023-32315, CVE-2022-1388</span></div>
-                                        <div class="meta-item"><span class="meta-label">CVSS Score:</span><span class="meta-value critical">9.8 (Critical)</span></div>
-                                        <div class="meta-item"><span class="meta-label">Target Domain:</span><span class="meta-value">Government (.mil.id)</span></div>
-                                        <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">X-Ray, SQLMap</span></div>
+                                <!-- Under Development Card 4 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-graduation-cap"></i></div>
+                                        <h4>Learning Platform</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
                                     </div>
-                                    <div class="project-achievements">
-                                        <h5>Key Achievements:</h5>
-                                        <ul class="achievement-list">
-                                            <li><i class="fas fa-check"></i> Database structure extraction</li>
-                                            <li><i class="fas fa-check"></i> Sensitive data enumeration</li>
-                                            <li><i class="fas fa-check"></i> Complete vulnerability documentation</li>
-                                        </ul>
-                                    </div>
-                                    <div class="project-actions"><a href="https://drive.google.com/file/d/18XChfVXgTIwA2qjPDsIMkeKO3Nb4fB_N/view?usp=sharing" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Full Report</a></div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="project-card attack-project">
-                            <div class="project-card-header" onclick="toggleProjectDropdown('red-team-project')">
-                                <div class="project-icon"><i class="fas fa-user-ninja"></i></div>
-                                <div class="project-info">
-                                    <h4>⚔️ Red Team Security Assessment</h4>
-                                    <p class="project-subtitle">Web Application Security</p>
-                                    <span class="project-status completed">Completed</span>
+                                <!-- Under Development Card 5 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-building"></i></div>
+                                        <h4>Business Directory</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
                                 </div>
-                                <div class="dropdown-arrow"><i class="fas fa-chevron-down"></i></div>
-                            </div>
-                            <div class="project-dropdown-content" id="red-team-project">
-                                <div class="project-details">
-                                    <div class="project-description"><p>Comprehensive red team assessment conducted during Network Security final exam simulation, involving exploitation of assigned web application to identify real security vulnerabilities.</p></div>
-                                    <div class="project-meta">
-                                        <div class="meta-item"><span class="meta-label">Assessment Type:</span><span class="meta-value">Red Team Security Assessment</span></div>
-                                        <div class="meta-item"><span class="meta-label">Context:</span><span class="meta-value">Final Exam Simulation</span></div>
-                                        <div class="meta-item"><span class="meta-label">Target Application:</span><span class="meta-value">Assigned Web Application</span></div>
-                                        <div class="meta-item"><span class="meta-label">Primary Tools:</span><span class="meta-value">Gobuster, Wappalyzer, GitHub, phpMyAdmin</span></div>
+
+                                <!-- Under Development Card 6 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-chart-bar"></i></div>
+                                        <h4>Analytics Dashboard</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
                                     </div>
-                                    <div class="project-achievements">
-                                        <h5>Key Achievements:</h5>
-                                        <ul class="achievement-list">
-                                            <li><i class="fas fa-check"></i> Gained unauthorized database access</li>
-                                            <li><i class="fas fa-check"></i> Discovered leaked .env file on GitHub</li>
-                                            <li><i class="fas fa-check"></i> Performed database structure exfiltration</li>
-                                            <li><i class="fas fa-check"></i> Documented vulnerabilities & provided mitigation</li>
-                                        </ul>
-                                    </div>
-                                    <div class="project-actions"><a href="https://drive.google.com/file/d/1D4mNGKAlbHJ1fUN4RRNyOKplHV1jqvF4/view?usp=sharing" target="_blank" class="project-btn primary"><i class="fas fa-eye"></i> View Assessment Report</a></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-            
-
-
         </div>
     </div>
 </section>
