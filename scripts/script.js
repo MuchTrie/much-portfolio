@@ -555,6 +555,26 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Simple Carousel for Malaundry Card
+function malaundryCarouselPrev(e) {
+    e.preventDefault();
+    const carousel = e.target.closest('.malaundry-carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    images[idx].classList.remove('active');
+    idx = (idx - 1 + images.length) % images.length;
+    images[idx].classList.add('active');
+}
+function malaundryCarouselNext(e) {
+    e.preventDefault();
+    const carousel = e.target.closest('.malaundry-carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    images[idx].classList.remove('active');
+    idx = (idx + 1) % images.length;
+    images[idx].classList.add('active');
+}
+
 // Wrap initialization so it can be re-run after partials are injected
 window.initAppScripts = function() {
     // Re-query DOM elements that might be missing at first load

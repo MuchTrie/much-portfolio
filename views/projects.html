@@ -185,7 +185,15 @@
                                 <!-- Malaundry Project Card -->
                                 <div class="webdev-project-card">
                                     <div class="webdev-project-preview">
-                                        <img class="project-preview-image" src="Project/Malaundry/1.png" alt="Malaundry Preview">
+                                        <div class="malaundry-carousel">
+                                            <button class="carousel-btn prev" onclick="malaundryCarouselPrev(event)"><i class="fas fa-chevron-left"></i></button>
+                                            <div class="carousel-images">
+                                                <img class="carousel-image active" src="Project/Malaundry/1.png" alt="Malaundry Preview 1">
+                                                <img class="carousel-image" src="Project/Malaundry/2.png" alt="Malaundry Preview 2">
+                                                <img class="carousel-image" src="Project/Malaundry/3.png" alt="Malaundry Preview 3">
+                                            </div>
+                                            <button class="carousel-btn next" onclick="malaundryCarouselNext(event)"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
                                     </div>
                                     <div class="webdev-project-info">
                                         <div class="project-tech-stack">
