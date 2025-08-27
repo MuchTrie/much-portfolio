@@ -279,43 +279,25 @@
     }
 }
 
-@media (max-width: 480px) {
-    .projects-grid-container {
-        gap: 15px;
-    }
-    
-    .project-grid-card {
-        min-height: 250px;
-        padding: 12px;
-    }
-    
-    .projects-bottom-row {
-        height: 300px; /* Lebih kecil lagi untuk mobile sangat kecil */
-    }
-    
-    .project-grid-header .project-type-title {
-        font-size: 1.2rem;
-    }
-    
-    .project-grid-header .project-type-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .project-grid-content .maintenance-notice {
-        padding: 20px 12px;
-    }
-    
-    .project-grid-content .maintenance-notice .maintenance-icon {
-        font-size: 1.8rem;
-    }
-    
-    .project-grid-content .maintenance-notice h4 {
-        font-size: 1rem;
-    }
-    
-    .project-grid-content .maintenance-notice p {
-        font-size: 0.8rem;
-    }
+@media (max-width: 900px) {
+  .webdev-projects-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 600px) {
+  .webdev-projects-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: none !important;
+    gap: 14px;
+    padding: 0 1px;
+  }
+  .webdev-project-card {
+    width: 100%;
+    margin: 0 auto 12px auto;
+  }
 }
 
 /* Ensure main projects card doesn't have conflicting styles */
@@ -694,6 +676,26 @@
 .carousel-btn:hover { background: #dc2626; color: #fff; }
 
 @media (max-width: 600px) {
-  .malaundry-carousel { min-height: 120px; }
-  .carousel-btn { width: 32px; height: 32px; font-size: 1.1rem; }
+  .projects-bottom-row {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+  .webdev-card .project-grid-content {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding-bottom: 10px;
+  }
+  .webdev-project-card {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    margin-bottom: 18px;
+  }
+  .webdev-project-preview, .malaundry-carousel {
+    min-height: 130px !important;
+    max-height: 130px !important;
+    height: 130px !important;
+  }
 }
