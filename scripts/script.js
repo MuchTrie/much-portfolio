@@ -617,7 +617,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Simple Carousel for Malaundry Card
-function malaundryCarouselPrev(e) {
+function universalCarouselPrev(e) {
     e.preventDefault();
     const carousel = e.target.closest('.malaundry-carousel');
     const images = carousel.querySelectorAll('.carousel-image');
@@ -630,7 +630,7 @@ function malaundryCarouselPrev(e) {
     images[idx].classList.add('active');
     images[idx].style.display = 'block';
 }
-function malaundryCarouselNext(e) {
+function universalCarouselNext(e) {
     e.preventDefault();
     const carousel = e.target.closest('.malaundry-carousel');
     const images = carousel.querySelectorAll('.carousel-image');
