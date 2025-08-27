@@ -1,3 +1,33 @@
+// Script loaded
+console.log('[script] script.js loaded');
+
+// Simple Carousel for Plagiarism Checker Card
+function plagiarismCarouselPrev(e) {
+    e.preventDefault();
+    const carousel = e.target.closest('.plagiarism-carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    if (!images || images.length === 0) return;
+    let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    if (idx === -1) idx = 0;
+    console.log('[plagiarism] prev clicked. current index:', idx);
+    images[idx].classList.remove('active');
+    idx = (idx - 1 + images.length) % images.length;
+    images[idx].classList.add('active');
+    console.log('[plagiarism] new active index:', idx, 'src:', images[idx].getAttribute('src'));
+}
+function plagiarismCarouselNext(e) {
+    e.preventDefault();
+    const carousel = e.target.closest('.plagiarism-carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    if (!images || images.length === 0) return;
+    let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    if (idx === -1) idx = 0;
+    console.log('[plagiarism] next clicked. current index:', idx);
+    images[idx].classList.remove('active');
+    idx = (idx + 1) % images.length;
+    images[idx].classList.add('active');
+    console.log('[plagiarism] new active index:', idx, 'src:', images[idx].getAttribute('src'));
+}
 // (Initial nav/event bindings removed; now handled after partials load in initAppScripts())
 
 // Navbar background & active link highlighting (re-bound after partials load)
@@ -69,6 +99,37 @@ window.addEventListener('load', () => {
         typeWriter(heroTitle, originalText, 80);
     }
 });
+
+// Debug: Attach load/error handlers to plagiarism carousel images
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.plagiarism-carousel');
+    if (!carousel) return;
+    const images = carousel.querySelectorAll('.carousel-image');
+    images.forEach((img, i) => {
+        // log current src
+        console.log(`[plagiarism] image[${i}] src=`, img.getAttribute('src'));
+        img.addEventListener('load', () => console.log(`[plagiarism] image[${i}] loaded OK:`, img.getAttribute('src')));
+        img.addEventListener('error', (ev) => console.error(`[plagiarism] image[${i}] failed to load:`, img.getAttribute('src'), ev));
+    });
+});
+
+// Also initialize debug helpers after partials are injected or when initAppScripts runs
+function initPlagiarismDebug() {
+    const carousel = document.querySelector('.plagiarism-carousel');
+    if (!carousel) {
+        console.log('[plagiarism] init: no carousel found');
+        return;
+    }
+    console.log('[plagiarism] init: found carousel');
+    const images = carousel.querySelectorAll('.carousel-image');
+    images.forEach((img, i) => {
+        console.log(`[plagiarism] init image[${i}] src=`, img.getAttribute('src'));
+        img.addEventListener('load', () => console.log(`[plagiarism] image[${i}] loaded OK:`, img.getAttribute('src')));
+        img.addEventListener('error', (ev) => console.error(`[plagiarism] image[${i}] failed to load:`, img.getAttribute('src'), ev));
+    });
+}
+
+document.addEventListener('partials:loaded', initPlagiarismDebug);
 
 // Particle background animation
 function createParticles() {
@@ -560,19 +621,27 @@ function malaundryCarouselPrev(e) {
     e.preventDefault();
     const carousel = e.target.closest('.malaundry-carousel');
     const images = carousel.querySelectorAll('.carousel-image');
+    if (!images || images.length === 0) return;
     let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    if (idx === -1) idx = 0;
     images[idx].classList.remove('active');
+    images[idx].style.display = 'none';
     idx = (idx - 1 + images.length) % images.length;
     images[idx].classList.add('active');
+    images[idx].style.display = 'block';
 }
 function malaundryCarouselNext(e) {
     e.preventDefault();
     const carousel = e.target.closest('.malaundry-carousel');
     const images = carousel.querySelectorAll('.carousel-image');
+    if (!images || images.length === 0) return;
     let idx = Array.from(images).findIndex(img => img.classList.contains('active'));
+    if (idx === -1) idx = 0;
     images[idx].classList.remove('active');
+    images[idx].style.display = 'none';
     idx = (idx + 1) % images.length;
     images[idx].classList.add('active');
+    images[idx].style.display = 'block';
 }
 
 // Wrap initialization so it can be re-run after partials are injected

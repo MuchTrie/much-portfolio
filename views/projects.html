@@ -5,7 +5,130 @@
         <div class="projects-main-card">
             <!-- Grid Layout: 2x1 Top Row + 1x Full Width Bottom Row -->
             <div class="projects-grid-container">
-                <!-- Top Row: 2 columns -->
+                <!-- Web Development Section (Full Width Atas) -->
+                <div class="projects-bottom-row">
+                    <!-- Web Development Card (Full Width) -->
+                    <div class="project-grid-card webdev-card">
+                        <div class="project-grid-header">
+                            <h3 class="project-type-title">💻 Web Development</h3>
+                            <p class="project-type-subtitle">Full-Stack & Cloud Solutions</p>
+                        </div>
+                        <div class="project-grid-content">
+                            <div class="webdev-projects-grid">
+
+                                <!-- Malaundry Project Card (with carousel template) -->
+                                <div class="webdev-project-card">
+                                    <div class="webdev-project-preview">
+                                        <div class="malaundry-carousel">
+                                            <button class="carousel-btn prev" onclick="malaundryCarouselPrev(event)"><i class="fas fa-chevron-left"></i></button>
+                                            <div class="carousel-images">
+                                                <img class="carousel-image active" src="Project/Malaundry/1.png" alt="Malaundry Preview 1">
+                                                <img class="carousel-image" src="Project/Malaundry/2.png" alt="Malaundry Preview 2">
+                                                <img class="carousel-image" src="Project/Malaundry/3.png" alt="Malaundry Preview 3">
+                                            </div>
+                                            <button class="carousel-btn next" onclick="malaundryCarouselNext(event)"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="webdev-project-info">
+                                        <div class="project-tech-stack">
+                                            <span class="tech-tag" style="background:rgba(255,99,132,0.9)">Laravel</span>
+                                            <span class="tech-tag" style="background:rgba(0,123,255,0.9)">Bootstrap</span>
+                                            <span class="tech-tag" style="background:rgba(0,180,70,0.9)">MySQL</span>
+                                        </div>
+                                        <div class="webdev-project-title" style="margin-top:8px;">Malaundry - Aplikasi Management Laundry</div>
+                                        <div class="webdev-project-description">A web application for managing laundry businesses: transaction management, customer and service management, and financial reporting. Built with Laravel & Bootstrap, integrated with MySQL database.</div>
+                                        <div class="project-actions">
+                                            <a href="https://github.com/MuchTrie/LARAVEL_Aplikasi-Management-Laundry.git" target="_blank" class="webdev-btn github-btn"><i class="fab fa-github"></i> Github</a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+                                <!-- Plagiarisme Detector Project Card (with carousel template) -->
+                                <div class="webdev-project-card">
+                                    <div class="webdev-project-preview">
+                                        <div class="malaundry-carousel">
+                                            <button class="carousel-btn prev" onclick="malaundryCarouselPrev(event)"><i class="fas fa-chevron-left"></i></button>
+                                            <div class="carousel-images">
+                                                <img class="carousel-image active" src="Project/Plagiarism_Checker/1.png" alt="Check Plagiarism Feature">
+                                                <img class="carousel-image" src="Project/Plagiarism_Checker/2.png" alt="Duplicate Detected">
+                                                <img class="carousel-image" src="Project/Plagiarism_Checker/3.png" alt="Dashboard Menu">
+                                                <img class="carousel-image" src="Project/Plagiarism_Checker/4.png" alt="Upload Menu">
+                                                <img class="carousel-image" src="Project/Plagiarism_Checker/5.png" alt="Success Upload">
+                                                <img class="carousel-image" src="Project/Plagiarism_Checker/6.png" alt="Email Verification">
+                                            </div>
+                                            <button class="carousel-btn next" onclick="malaundryCarouselNext(event)"><i class="fas fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="webdev-project-info">
+                                        <div class="project-tech-stack">
+                                            <span class="tech-tag" style="background:rgba(33,150,243,0.9)">ExpressJS</span>
+                                            <span class="tech-tag" style="background:rgba(0,123,255,0.9)">Node.js</span>
+                                            <span class="tech-tag" style="background:rgba(0,180,70,0.9)">MySQL</span>
+                                            <span class="tech-tag" style="background:rgba(255,193,7,0.9)">AWS S3</span>
+                                            <span class="tech-tag" style="background:rgba(255,87,34,0.9)">AWS SNS</span>
+                                        </div>
+                                        <div class="webdev-project-title" style="margin-top:8px;">Plagiarism Checker (ExpressJS + AWS)</div>
+                                        <div class="webdev-project-description">A web application for detecting plagiarism in student assignment files. Built with ExpressJS, MySQL, and AWS S3 for file storage. The system automatically checks for duplicate files, notifies users of plagiarism status, and provides a dashboard for file management.</div>
+                                        <div class="project-actions">
+                                            <a href="https://github.com/MuchTrie/ExpressJS_Plagiarism-Detector-with-AWS-Service" target="_blank" class="webdev-btn github-btn"><i class="fab fa-github"></i> Github</a>
+                                        </div>
+                                    </div>                                    
+                                </div>
+
+                                <!-- Under Development Card 1 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-desktop"></i></div>
+                                        <h4>Under Development</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Under Development Card 2 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-shopping-cart"></i></div>
+                                        <h4>Under Development</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+
+                                <!-- New Under Development Card -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-brain"></i></div>
+                                        <h4>Under Development</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Under Development Card 3 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-user"></i></div>
+                                        <h4>Under Development</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+
+                                <!-- Under Development Card 4 -->
+                                <div class="webdev-project-card under-development">
+                                    <div class="under-dev-content">
+                                        <div class="under-dev-icon"><i class="fas fa-graduation-cap"></i></div>
+                                        <h4>Under Development</h4>
+                                        <p>Under Development</p>
+                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity & AI Section (2 kolom bawah) -->
                 <div class="projects-top-row">
                     <!-- Cybersecurity Card (Left) -->
                     <div class="project-grid-card cybersecurity-card">
@@ -173,111 +296,26 @@
                                         <span class="tech-tag" style="background:rgba(33,150,243,0.9)">Computer Vision</span>
                                     </div>
                                     <div class="webdev-project-title" style="margin-top:8px;">YOLO Fire Detection</div>
-                                    <div class="webdev-project-description">Sistem deteksi api otomatis berbasis YOLO dan Computer Vision. Mendeteksi kebakaran secara real-time dari video/camera, cocok untuk sistem monitoring keamanan.</div>
+                                    <div class="webdev-project-description">An automatic fire detection system based on YOLO and Computer Vision. Detects fire in real-time from video or camera, suitable for security monitoring systems.</div>
                                     <div class="project-actions">
                                         <a href="https://github.com/MuchTrie/YOLO_Fire-Recognition.git" target="_blank" class="webdev-btn github-btn"><i class="fab fa-github"></i> Github</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Bottom Row: Full Width -->
-                <div class="projects-bottom-row">
-                    <!-- Web Development Card (Full Width) -->
-                    <div class="project-grid-card webdev-card">
-                        <div class="project-grid-header">
-                            <h3 class="project-type-title">💻 Web Development</h3>
-                            <p class="project-type-subtitle">Full-Stack & Cloud Solutions</p>
-                        </div>
-                        <div class="project-grid-content">
-                            <div class="webdev-projects-grid">
-
-                                <!-- Malaundry Project Card -->
-                                <div class="webdev-project-card">
-                                    <div class="webdev-project-preview">
-                                        <div class="malaundry-carousel">
-                                            <button class="carousel-btn prev" onclick="malaundryCarouselPrev(event)"><i class="fas fa-chevron-left"></i></button>
-                                            <div class="carousel-images">
-                                                <img class="carousel-image active" src="Project/Malaundry/1.png" alt="Malaundry Preview 1">
-                                                <img class="carousel-image" src="Project/Malaundry/2.png" alt="Malaundry Preview 2">
-                                                <img class="carousel-image" src="Project/Malaundry/3.png" alt="Malaundry Preview 3">
-                                            </div>
-                                            <button class="carousel-btn next" onclick="malaundryCarouselNext(event)"><i class="fas fa-chevron-right"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="webdev-project-info">
-                                        <div class="project-tech-stack">
-                                            <span class="tech-tag" style="background:rgba(255,99,132,0.9)">Laravel</span>
-                                            <span class="tech-tag" style="background:rgba(0,123,255,0.9)">Bootstrap</span>
-                                            <span class="tech-tag" style="background:rgba(0,180,70,0.9)">MySQL</span>
-                                        </div>
-                                        <div class="webdev-project-title" style="margin-top:8px;">Malaundry - Aplikasi Management Laundry</div>
-                                        <div class="webdev-project-description">Aplikasi web untuk manajemen bisnis laundry: pengelolaan transaksi, pelanggan, layanan, dan laporan keuangan. Dibangun dengan Laravel & Bootstrap, terintegrasi database MySQL.</div>
-                                        <div class="project-actions">
-                                            <a href="https://github.com/MuchTrie/LARAVEL_Aplikasi-Management-Laundry.git" target="_blank" class="webdev-btn github-btn"><i class="fab fa-github"></i> Github</a>
-                                        </div>
-                                    </div>
+                            <div class="webdev-project-card">
+                                <div class="webdev-project-preview" style="display:flex;align-items:center;justify-content:center;min-height:120px;background:#232323;border-radius:12px;">
+                                    <!-- Kosong, placeholder gambar -->
                                 </div>
-
-                                <!-- Under Development Card 1 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-desktop"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                <div class="webdev-project-info">
+                                    <div class="project-tech-stack">
+                                        <span class="tech-tag" style="background:rgba(255,193,7,0.9)">Python</span>
+                                        <span class="tech-tag" style="background:rgba(255,87,34,0.9)">YOLO</span>
+                                        <span class="tech-tag" style="background:rgba(33,150,243,0.9)">Computer Vision</span>
                                     </div>
-                                </div>
-
-                                <!-- Under Development Card 2 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-shopping-cart"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-
-                                <!-- Under Development Card 3 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-user"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-
-                                <!-- Under Development Card 4 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-graduation-cap"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-
-                                <!-- Under Development Card 5 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-building"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
-                                    </div>
-                                </div>
-
-                                <!-- Under Development Card 6 -->
-                                <div class="webdev-project-card under-development">
-                                    <div class="under-dev-content">
-                                        <div class="under-dev-icon"><i class="fas fa-chart-bar"></i></div>
-                                        <h4>Under Development</h4>
-                                        <p>Under Development</p>
-                                        <div class="loading-dots"><span></span><span></span><span></span></div>
+                                    <div class="webdev-project-title" style="margin-top:8px;">YOLO Avocado Ripeness Detection</div>
+                                    <div class="webdev-project-description">An AI project to detect avocado ripeness using YOLO and Computer Vision. The system analyzes avocado images and automatically classifies their ripeness level, helping farmers and distributors efficiently sort and monitor fruit quality.</div>
+                                    <div class="project-actions">
+                                        <a href="#" target="_blank" class="webdev-btn github-btn"><i class="fab fa-github"></i> Github</a>
                                     </div>
                                 </div>
                             </div>

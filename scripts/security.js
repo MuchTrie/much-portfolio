@@ -236,7 +236,8 @@
         console.log('🔒 Security System Activated');
         
         // 1. Disable console first
-        disableConsole();
+    // disableConsole();
+    // NOTE: Console override temporarily disabled for debugging image loading issues
         
         // 2. Check path
         checkPath();
